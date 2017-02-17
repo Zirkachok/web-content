@@ -43,7 +43,14 @@ Les utilitaires libres de GNU et le noyau de Linux. -->
 
 # Un peu de pratique
 
-    shutdown
+Il est maintenant temps de nous familiariser un peu plus avec notre système, et pour cela, nous allons utiliser un terminal de commande. En effet, vous n'aurez pas toujours une interface graphique à disposition (pensez aux serveurs distants ou aux systèmes embarqués), et les outils graphiques sont bien souvent peu compatibles d'une distribution ou version à l'autre et pas toujours exhaustifs. Il est donc la plupart du temps bien plus rapide et efficace de travailler directement via le terminal.
+
+Votre système Linux est prêt, un terminal ouvert, nous allons donc voir comment obtenir des renseignements basiques sur le système. 
+
+	$ uname -a
+	Linux Epinet 3.13.0-93-generic #140-Ubuntu SMP Mon Jul 18 21:21:05 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
+    shutdown -p now
 
 <!-- uname -a -->
 <!-- Linux Epinet 3.13.0-93-generic #140-Ubuntu SMP Mon Jul 18 21:21:05 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux -->
