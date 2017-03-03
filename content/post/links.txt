@@ -1,1 +1,15 @@
 https://www.linux.com/blog/open-source-and-frozen-middle
+
+<!--
+(15:15:10) julienbeaudaux@gmail.com/995F25C3: http://www.tecmint.com/linux-boot-process-and-manage-services/
+(15:39:18) julienbeaudaux@gmail.com/995F25C3: https://www.freedesktop.org/software/systemd/man/systemd.service.html
+(15:45:31) Ben Zingraff: https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
+(15:51:34) Ben Zingraff: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Targets.html#tabl-Managing_Services_with_systemd-Targets-Runlevels
+(16:19:08) Ben Zingraff: http://unix.stackexchange.com/questions/47695/how-to-write-startup-script-for-systemd
+ -->
+
+
+ Idées :
+
+ Zoom sur une entreprise : Sony, Medtronic, Antonov
+ https://www.fastcompany.com/3067486/most-innovative-companies/why-medtronic-is-one-of-the-most-innovative-companies-of-2017

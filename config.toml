@@ -2,9 +2,9 @@ baseurl = "https://zirkachok.github.io/"
 languageCode = "en-us"
 title = "Zirka"
 # Enable comments by entering your Disqus shortname
-disqusShortname = "zirka"
+disqusShortname = "zirkachok"
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-92789318-1"
 # Define the number of posts per page
 paginate = 10
 footnotereturnlinkcontents = "↩"

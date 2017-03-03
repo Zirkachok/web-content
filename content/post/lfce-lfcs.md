@@ -8,7 +8,7 @@ banner     = "banners/placeholder.png"
 draft      = false
 +++
 
-Linux fête cette année ses 25 ans, autant d'années pendant lesquelles nous l'avons vu prendre du poids. Son influence s'est tout particulièrement faite remarquer dans les secteurs ayant subi d'importantes transformations, tels que l'embarqué ou le Cloud, où il est devenu un acteur essentiel. Même les architectures mainframe commencent à lorgner de son côté[^1], tout un symbole. 
+Linux fête cette année ses 25 ans, autant d'années pendant lesquelles nous l'avons vu prendre du poids. Son influence s'est tout particulièrement faite remarquer dans les secteurs ayant subi d'importantes transformations, tels que l'embarqué, le Cloud ou les smartphones, où il est devenu un acteur essentiel. Même les architectures mainframe commencent à lorgner de son côté[^1], tout un symbole.
 
 [^1]: En témoignent des initiatives comme l'[Open Mainframe](https://www.openmainframeproject.org/), soutenue par IBM et Hitachi entre autres.
 
@@ -42,19 +42,4 @@ Les "Infrastructure as a service" ou IaaS, comme [Scaleway](http://scaleway.com/
 Pour mettre en avant ses compétences, les certifications restent un instrument de choix. Cependant, autant Microsoft propose des certifications claires et reconnues pour ses systèmes Windows, Autant pour Linux les choses sont moins claires.
 
 La fondation Linux a même lancé un programme destiné à former des ingénieurs et administrateurs système sur le système Linux, ainsi que des certifications reconnues dans ce domaine, les LFCS & LFCE (Linux Foundation Certified Sysadmin & Engineer).
- -->
-
-
-
-
-
-<!-- Pour autant, il est encore difficile pour les ingénieurs de faire valoir leurs connaissances de Linux, autant qu'il est difficile pour un recruteur d'évaluer les compétences d'un candidat en la matière. -->
-
-
-<!--
-(15:15:10) julienbeaudaux@gmail.com/995F25C3: http://www.tecmint.com/linux-boot-process-and-manage-services/
-(15:39:18) julienbeaudaux@gmail.com/995F25C3: https://www.freedesktop.org/software/systemd/man/systemd.service.html
-(15:45:31) Ben Zingraff: https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
-(15:51:34) Ben Zingraff: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Targets.html#tabl-Managing_Services_with_systemd-Targets-Runlevels
-(16:19:08) Ben Zingraff: http://unix.stackexchange.com/questions/47695/how-to-write-startup-script-for-systemd
  -->
