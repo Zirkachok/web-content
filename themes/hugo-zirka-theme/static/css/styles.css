@@ -2442,7 +2442,7 @@ hr {
   font-size: 16px;
   font-size: 1rem;
   text-align: center;
-  color: #e04c4c;
+  color: #a48c8c;
   margin-bottom: 25px;
 }
 .article-category {
@@ -2852,6 +2852,9 @@ hr {
 .share__link:hover .share__icon--github {
   fill: #02bfff;
 }
+.share__link:hover .share__icon--cv {
+  fill: #02bfff;
+}
 .share__link:hover .share__icon--facebook {
   fill: #034685;
 }
@@ -2868,6 +2871,9 @@ hr {
   fill: #35ccff;
 }
 .share__icon--github {
+  fill: #35ccff;
+}
+.share__icon--cv {
   fill: #35ccff;
 }
 .share__icon--facebook {
@@ -3161,6 +3167,9 @@ hr {
   fill: #35ccff;
 }
 .social__icon--github {
+  fill: #333333;
+}
+.social__icon--cv {
   fill: #333333;
 }
 .social__icon--linkedin {

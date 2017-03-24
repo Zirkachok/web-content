@@ -14,6 +14,9 @@ theme = "hugo-zirka-theme"
 #   - Rename to "zirka-io"
 #   - Article on 62304
 #   - Push markerMatrix
+#   - Make a menu
+#   - Integrate CV
+#   - Make search bar & categories
 
 
 [permalinks]
