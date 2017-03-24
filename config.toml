@@ -1,5 +1,5 @@
 baseurl = "https://zirkachok.github.io/"
-languageCode = "en-us"
+languageCode = "fr-fr"
 title = "Zirka"
 # Enable comments by entering your Disqus shortname
 disqusShortname = "zirkachok"
@@ -9,6 +9,11 @@ googleAnalytics = "UA-92789318-1"
 paginate = 10
 footnotereturnlinkcontents = "↩"
 theme = "hugo-zirka-theme"
+
+# TODO 
+#   - Rename to "zirka-io"
+#   - Article on 62304
+#   - Push markerMatrix
 
 
 [permalinks]
@@ -22,8 +27,9 @@ theme = "hugo-zirka-theme"
     location = "Strasbourg, France"
     site_description = ""
     copyright  = "Julien Beaudaux. Written in [Go](https://golang.org/), powered by [Hugo](//gohugo.io)."
-    avatar = "css/images/jul.png"
-    logo = "css/images/zirkaLogo.png"
+    avatar = "/css/images/jul.png"
+    logo = "/images/zirkaLogo.png"
+    icon = "/images/zirkaIcon.png"
 
     # Format dates with Go's time formatting
     date_format = "2006-01-02"
@@ -31,6 +37,9 @@ theme = "hugo-zirka-theme"
     # Add custom assets with their paths relative to the static folder
 	custom_css = []
 	custom_js  = []
+
+    image = "placeholder.png"
+    github = "zirkachok"
 
 # Create custom menu entries by defining a label and a link for
 # them. Since you can also link posts, you've the option the

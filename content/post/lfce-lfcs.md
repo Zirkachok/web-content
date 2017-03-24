@@ -1,6 +1,7 @@
 +++
 title      = "Linux a 25 ans, il est temps de se certifier!"
 date       = "2017-01-20T16:01:18+01:00"
+author     = "jul"
 tags       = ["Linux", "LFCE-LFCS"]
 categories = ["Informatique"]
 menu       = ""

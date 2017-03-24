@@ -8,30 +8,25 @@ banner     = "banners/placeholder.png"
 draft      = true
 +++
 
-<!-- Avant même de commencer notre série d'articles concernant Linux, son fonctionnement et son administration, nous allons passer en revue les bases de Linux qui vous seront nécessaires pour vous exercer en suivant mes tutoriels.
+Pour bien débuter notre série d'articles concernant Linux, son fonctionnement et son administration, nous allons passer en revue les bases de Linux qui vous seront nécessaires pour vous orienter et naviguer au sein du système de fichiers. Ici et comme dans toute la suite, nous passerons par la ligne de commande.
 
+Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série, plutôt que de le faire depuis son environnement de tous les jours. En effet nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système.
 
-# Mettre en place une Sandbox
+Ceci étant dit, plongeons nous maintenant dans cette fameuse ligne de commande, et voyons commant nous repérer et naviguer dans un système Linux. 
 
-Au cours de nos tests et exercices, nous allons donc être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système. Pour ne citer que quelques exemples, nous verrons comment modifier des paramètres système et réseau, changer des droits, créer et supprimer des utilisateurs, installer un nouveau noyau, etc. Il n'est donc pas envisageable de faire ces manipulations directement depuis son environnement de tous les jours. Une autre raison pour laquelle il est préférable de réaliser ses tests sur un autre système est d'éviter que le système lui-même (ses configurations courantes, les droits affectés, les installations réalisées) n'altère le résultat de nos tests. Donc, pour faire les choses proprement, je vais avant toutes choses vous proposer quelques solutions pour mettre en place un espace de test dédié et isolé : une Sandbox.
+# Dompter la ligne de commande
 
-P -->
+blahblah
 
-<!-- ## Virtualisation vs. IaaS -->
-
-<!-- Console/Terminal -->
-
-<!-- # Navigation dans un système Linux -->
-
-Pour bien débuter notre série d'articles concernant Linux, son fonctionnement et son administration, nous allons passer en revue les bases de Linux qui vous seront nécessaires pour vous orienter et naviguer au sein du système de fichiers.
-
-# Chemins absolus et relatifs
+# L'arborescence
 
 Linux repose sur une arborescence pour organiser les fichiers au sein du système[^1]. Chaque fichier ou dossier se situe donc virtuellement dans une succession de répertoires, remontant jusqu'à la racine du système de fichiers (dénommée " / "): c'est ce qu'on appelle le **chemin absolu**. Par simplicité, cette arborescence est souvent représentée comme un arbre inversé, avec la racine au sommet. Le dossier dans lequel vous vous trouvez est quand à lui appelé **dossier courant** (ou "Working directory", et il est aussi possible de représenter un chemin à partir de cet endroit: c'est alors un **chemin relatif**.
 
 Dans cet exemple, le <span style="color:blue">chemin absolu vers le dossier "rainbow"</span> est " _/home/zirka/somewhere/over/rainbow_ " . Comme le <span style="color:magenta">dossier courant</span> est "zirka" (dont le chemin absolu est " */home/zirka* "), le <span style="color:red">chemin relatif vers le dossier "*rainbow*"</span> est " *somewhere/over/rainbow* " .
 
 [^1]: Cette arborescence suit elle même une norme (le "Filesystems Hierarchy Standard", FHS), que nous verrons plus en détail dans un article dédié.
+
+# S'orienter et se déplacer
 
 Dans la pratique, un certain nombre de commandes nous permettent de nous orienter et nous déplacer dans le système de fichier, en ligne de commande. Commençons par découvrir l'arborescence :
 
@@ -43,19 +38,24 @@ Pour toutes ces commandes, il est aussi possible de passer en argument un chemin
 
 Enfin, c'est la commande **cd** (pour "Change Directory") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
 
-À noter que le répertoire personnel de l'utilisateur courant peut être abrégé par " *~* " dans le système, le dossier courant par " *.* ", et le dossier parent (celui qui contient le dossier courant) par " *..* ".
+À noter qu'il existe aussi certains raccourcis, comme :
+
+ - " *~* " pour le répertoire personnel de l'utilisateur courant
+ - " *.* " pour le répertoire courant
+ - " *..* " pour le répertoire parent (celui qui contient le dossier courant)
+ - " *-* " pour le répertoire précédent (celui où vous étiez avant le dernier déplacement)
 
 Cela nous donne donc via le terminal :
 
-   	zirka@Epinet:~$ pwd
+	zirka@Epinet:~$ pwd
 	/home/zirka
 
 	zirka@Epinet:~$ tree 
 	.
 	├── config.xml
 	├── somewhere
-	│   └── over
-	│       └── rainbow
+	│   └── over
+	│       └── rainbow
 	│           ├── high.c
 	│           ├── up.mk
 	│           └── way.c
@@ -78,11 +78,11 @@ Cela nous donne donc via le terminal :
 # Créer et détruire
 Nous avons vu comment naviguer dans l'arborescence, reste maintenant à créer, déplacer, éditer et détruire des fichiers. Commencons par la création et le déplacement. Cela se passe avec les commandes suivantes :
 
- - **mkdir** : permet de créer un répertoire avec pour chemin celui donné en argument
+ - **mkdir** (pour "*Make Directory*") : permet de créer un répertoire avec pour chemin celui donné en argument
  - **touch** : crée un fichier avec pour chemin celui donné en argument [^2]
- - **cp** : permet de copier un fichier d'un chemin vers un autre.
+ - **cp** (pour "*Copy*") : permet de copier un fichier d'un chemin vers un autre.
   - *-r* : avec l'option " *-r* " (pour recursive), copie un dossier et tout son contenu.
- - **mv** : déplace un fichier d'un chemin vers un autre. À noter que mv peut aussi être utilisé pour renommer un fichier/dossier.
+ - **mv** (pour "*Move*") : déplace un fichier d'un chemin vers un autre. À noter que mv peut aussi être utilisé pour renommer un fichier/dossier.
   - *-r* : avec l'option " *-r* ", permet de déplacer un dossier et tout son contenu.
 
 [^2]: En fait, " *touch* " permet de changer les dates d'un fichier (création, modification, etc.). Mais si ce fichier n'existe pas, il va le créer. À ma connaissance, il n'existe pas de commande dédiée pour créer un fichier.
@@ -109,21 +109,21 @@ Cela nous donne donc via le terminal :
 	.
 	├── config.xml
 	├── highway
-	│   └── to
-	│       ├── hell.txt
+	│   └── to
+	│       ├── hell.txt
 	│       └── up.mk
 	├── somewhere
-	│   └── over
-	│       └── rainbow
+	│   └── over
+	│       └── rainbow
 	│           ├── hell.txt
 	│           ├── high.c
 	│           └── way.c
 
 Voyons maintenant comment détruire des fichiers ou dossiers. Pour cela rien de plus simple, avec les commandes suivantes :
 
- - **rm** : supprime définitivement un fichier via le chemin passé en argument.
+ - **rm** (pour "*Remove*") : supprime définitivement un fichier via le chemin passé en argument.
   - *-r* : avec l'option *-r*, efface un dossier et tout son contenu
- - **rmdir** : efface définitivement un dossier via le chemin passé en argument.
+ - **rmdir** (pour "*Remove Directory*") : efface définitivement un dossier via le chemin passé en argument.
 
 En pratique, cela nous donne :
 
@@ -131,12 +131,12 @@ En pratique, cela nous donne :
 	.
 	├── config.xml
 	├── highway
-	│   └── to
-	│       ├── hell.txt
+	│   └── to
+	│       ├── hell.txt
 	│       └── up.mk
 	├── somewhere
-	│   └── over
-	│       └── rainbow
+	│   └── over
+	│       └── rainbow
 	│           ├── hell.txt
 	│           ├── high.c
 	│           └── way.c
@@ -154,6 +154,36 @@ En pratique, cela nous donne :
 	├── config.xml
 	└── somewhere
 
+<!-- # Créer des liens
+
+Lien symbolique (aka "symlink" ou "soft link") -->
+
 # Conclusion
 
-Nous avons maintenant vu comment se repérer et déplacer dans le système de fichiers Linux, ainsi que comment créer, détruire, copier et déplacer des fichiers et répertoires, terminant ainsi notre premier article d'une longue série dédiée aux certifications de la fondation Linux. Le prochain article sera quand à lui dédié aux droits et permissions.
+Nous arrivons maintenant à la fin de notre premier acticle d'une longue série dédiée aux certifications de la fondation Linux. Nous avons abordé une première partie des commandes essentielles à connaître pour utiliser le terminal, en passant en revue les moyens de se repérer, créer et détruire dans l'arborescence Linux. Le prochain article complètera ce thème en abordant la question des liens, de la manipulation de fichiers, du manuel, et bien plus encore.
+
+
+
+<!--     Command Line
+
+x   1. The Shell
+x   2. pwd (Print Working Directory)
+x   3. cd (Change Directory)
+x   4. ls (List Directories)
+x   5. touch
+    6. file
+    7. cat
+    8. less
+    9. history
+x   10. cp (Copy)
+x   11. mv (Move)
+x   12. mkdir (Make Directory)
+x   13. rm (Remove)
+    14. find
+    15. help
+    16. man
+    17. whatis
+    18. alias
+    19. exit
+
+ -->

@@ -1,6 +1,7 @@
 +++
 title      = "Quelques impressions sur le Go"
 date       = "2017-01-18T17:20:17+01:00"
+author     = "jul"
 tags       = ["dev.", "golang"]
 categories = ["Informatique"]
 menu       = ""
