@@ -15,7 +15,8 @@ theme = "hugo-zirka-theme"
 #   - Article on 62304
 #   - Push markerMatrix
 #   - Make a menu
-#   - Integrate CV
+#   - Integrate CV & MainPage
+#       - https://discuss.gohugo.io/t/creating-static-content-that-uses-partials/265/9
 #   - Make search bar & categories
 
 
