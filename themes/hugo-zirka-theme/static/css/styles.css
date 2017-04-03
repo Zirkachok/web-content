@@ -955,6 +955,7 @@ textarea {
   p,
   h2,
   h3 {
+    font-size: 1em;
     orphans: 3;
     widows: 3;
   }
@@ -2268,13 +2269,19 @@ hr {
 .article .blog-tag:first-child {
   margin-left: 0;
 }
-.article-content h1,
+.article-content h1 {
+  font-weight: 800;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
 .article-content h2,
 .article-content h3,
 .article-content h4,
 .article-content h5,
 .article-content h6 {
-  font-weight: 500;
+  font-weight: 300;
   margin-top: 25px;
   margin-bottom: 25px;
 }

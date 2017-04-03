@@ -1,26 +1,33 @@
 +++
 title      = "LFCS : Navigation dans un système Linux"
 date       = "2017-02-14T16:14:27+01:00"
+author     = "jul"
 tags       = ["Linux", "LFCE-LFCS"]
 categories = ["Informatique"]
 menu       = ""
 banner     = "banners/placeholder.png"
-draft      = true
 +++
 
-Pour bien débuter notre série d'articles concernant Linux, son fonctionnement et son administration, nous allons passer en revue les bases de Linux qui vous seront nécessaires pour vous orienter et naviguer au sein du système de fichiers. Ici et comme dans toute la suite, nous passerons par la ligne de commande.
+Pour bien débuter ma série d'articles concernant Linux, son fonctionnement et son administration, je vais passer en revue les commandes de bases nécessaires pour s'orienter et naviguer au sein du système de fichiers. Je parle bien de "commandes", car ici comme dans toute la suite, nous passerons par la ligne de commande.
 
-Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série, plutôt que de le faire depuis son environnement de tous les jours. En effet nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système.
+Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série. Comme nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système, le faire depuis son environnement de tous les jours peut s'avérer risqué si vous ne savez pas exactement ce que vous faites.
 
-Ceci étant dit, plongeons nous maintenant dans cette fameuse ligne de commande, et voyons commant nous repérer et naviguer dans un système Linux. 
+Ceci étant dit, plongeons nous dans cette fameuse ligne de commande, et voyons commant nous repérer et naviguer dans un système Linux. 
 
-# Dompter la ligne de commande
+<div class="warning">Il s'agit ici d'une introduction destinée aux débutants. Pour ceux d'entre vous déjà familiers avec la ligne de commande, vous n'apprendrez probablement rien de nouveau dans cet article.</div>
 
-blahblah
+# L'interpréteur de commandes
+
+L'interpréteur de commandes (aussi appelé "ligne de commande") permet d'accéder aux fonctions propres aux système d'exploitation par le biais de commandes données en entrée (dans notre cas, tapées au clavier). Il existe de nombreux interpréteurs, les plus courant étant le Bourne Shell (*sh*), le Bourne-Again Shell (*bash*), le Z shell (*zsh*), etc., le plus répendu actuellement (et par défaut sur de nombreuses distributions de Linux) étant bash.
+
+En mode graphique, la ligne de commande est accessible sur les distributions Linux par défaut via les applications dédiées ("Console", "Terminal", etc.,). Avec l'expérience il est souvent bien plus simple et rapide de gérer son système Linux de cette manière que graphiquement. Dans le cas des serveurs, qui n'ont pas de mode graphique, il s'agit même d'un passage obligé, alors autant s'y mettre dès maintenant.
+
 
 # L'arborescence
 
-Linux repose sur une arborescence pour organiser les fichiers au sein du système[^1]. Chaque fichier ou dossier se situe donc virtuellement dans une succession de répertoires, remontant jusqu'à la racine du système de fichiers (dénommée " / "): c'est ce qu'on appelle le **chemin absolu**. Par simplicité, cette arborescence est souvent représentée comme un arbre inversé, avec la racine au sommet. Le dossier dans lequel vous vous trouvez est quand à lui appelé **dossier courant** (ou "Working directory", et il est aussi possible de représenter un chemin à partir de cet endroit: c'est alors un **chemin relatif**.
+Linux repose sur une arborescence pour organiser les fichiers au sein du système[^1]. Chaque fichier ou dossier se situe donc virtuellement dans une succession de répertoires, remontant jusqu'à la racine du système de fichiers (dénommée " / "): c'est ce qu'on appelle le **chemin absolu**. Par simplicité, cette arborescence est souvent représentée comme un arbre inversé, avec la racine au sommet. Le dossier dans lequel vous vous trouvez est quand à lui appelé **dossier courant** (ou "Working directory"), et il est aussi possible de représenter un chemin à partir de cet endroit: c'est alors un **chemin relatif**.
+
+
 
 Dans cet exemple, le <span style="color:blue">chemin absolu vers le dossier "rainbow"</span> est " _/home/zirka/somewhere/over/rainbow_ " . Comme le <span style="color:magenta">dossier courant</span> est "zirka" (dont le chemin absolu est " */home/zirka* "), le <span style="color:red">chemin relatif vers le dossier "*rainbow*"</span> est " *somewhere/over/rainbow* " .
 
@@ -34,9 +41,9 @@ Dans la pratique, un certain nombre de commandes nous permettent de nous oriente
  - **ls** (pour "*LiSt directory content*") : liste les fichiers & dossiers situés dans le dossier courant
  - **tree** : retourne une vue graphique de l'arborescence à partir du chemin courant
 
-Pour toutes ces commandes, il est aussi possible de passer en argument un chemin donné, pour que l'opération soit effectuée sur ce dossier.
+Pour toutes ces commandes, il est aussi possible de passer en argument un chemin donné, pour que l'opération soit effectuée à partir de ce dossier.
 
-Enfin, c'est la commande **cd** (pour "Change Directory") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
+Enfin, c'est la commande **cd** (pour "*Change Directory*") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
 
 À noter qu'il existe aussi certains raccourcis, comme :
 
@@ -45,12 +52,12 @@ Enfin, c'est la commande **cd** (pour "Change Directory") qui nous permet de nou
  - " *..* " pour le répertoire parent (celui qui contient le dossier courant)
  - " *-* " pour le répertoire précédent (celui où vous étiez avant le dernier déplacement)
 
-Cela nous donne donc via le terminal :
+Cela nous donne donc via le terminal (les commandes que nous entrons sont ici précédées du symbole "$") :
 
-	zirka@Epinet:~$ pwd
+	$ pwd
 	/home/zirka
 
-	zirka@Epinet:~$ tree 
+	$ tree 
 	.
 	├── config.xml
 	├── somewhere
@@ -60,17 +67,17 @@ Cela nous donne donc via le terminal :
 	│           ├── up.mk
 	│           └── way.c
 
-	zirka@Epinet:~$ ls
+	$ ls
 	somewhere
 
-	zirka@Epinet:~$ ls somewhere/over/rainbow
+	$ ls somewhere/over/rainbow
 	high  up  way
 
-	zirka@Epinet:~$ ls ~/somewhere/over/rainbow
+	$ ls ~/somewhere/over/rainbow
 	high  up  way
 
-	zirka@Epinet:~$ cd /home/zirka/somewhere/over/rainbow
-	zirka@Epinet:~/somewhere/over/rainbow$ ls
+	$ cd /home/zirka/somewhere/over/rainbow
+	$ ls
 	high  up  way
 
 <!-- <span style="color:red">!!! **Important !!!**</span> Lorsque vous avez un doute sur l'utilisation d'une commande, la commande **man** suivie du nom de celle recherchée (e.g. *man pwd* ) vous affichera une page d'aide, avec son utilisation, ses options, etc. -->
@@ -89,7 +96,7 @@ Nous avons vu comment naviguer dans l'arborescence, reste maintenant à créer, 
 
 Cela nous donne donc via le terminal :
 
-	zirka@Epinet:~$ tree
+	$ tree
 	.
 	├── config.xml
 	├── somewhere
@@ -99,13 +106,13 @@ Cela nous donne donc via le terminal :
 	│           ├── up.mk
 	│           └── way.c
 
-	zirka@Epinet:~$ mkdir highway
-	zirka@Epinet:~$ mkdir highway/to
-	zirka@Epinet:~$ touch highway/to/hell.txt
-	zirka@Epinet:~$ cp highway/to/hell.txt somewhere/over/rainbow
-	zirka@Epinet:~$ mv somewhere/over/rainbow/up.mk highway/to/hell.txt
+	$ mkdir highway
+	$ mkdir highway/to
+	$ touch highway/to/hell.txt
+	$ cp highway/to/hell.txt somewhere/over/rainbow
+	$ mv somewhere/over/rainbow/up.mk highway/to/hell.txt
 
-	zirka@Epinet:~$ tree
+	$ tree
 	.
 	├── config.xml
 	├── highway
@@ -127,7 +134,7 @@ Voyons maintenant comment détruire des fichiers ou dossiers. Pour cela rien de 
 
 En pratique, cela nous donne :
 
-	zirka@Epinet:~$ tree
+	$ tree
 	.
 	├── config.xml
 	├── highway
@@ -141,22 +148,18 @@ En pratique, cela nous donne :
 	│           ├── high.c
 	│           └── way.c
 
-	zirka@Epinet:~$ rm highway/to/hell.txt
-	zirka@Epinet:~$ rm highway/to/up.mk
-	zirka@Epinet:~$ rmdir highway/to
-	zirka@Epinet:~$ rm -r somewhere/over
-	zirka@Epinet:~$ touch highway/to/hell.txt
-	zirka@Epinet:~$ cp highway/to/hell.txt somewhere/over/rainbow
-	zirka@Epinet:~$ mv somewhere/over/rainbow/up.mk highway/to/hell.txt
+	$ rm highway/to/hell.txt
+	$ rm highway/to/up.mk
+	$ rmdir highway/to
+	$ rm -r somewhere/over
+	$ touch highway/to/hell.txt
+	$ cp highway/to/hell.txt somewhere/over/rainbow
+	$ mv somewhere/over/rainbow/up.mk highway/to/hell.txt
 
-	zirka@Epinet:~$ tree
+	$ tree
 	.
 	├── config.xml
 	└── somewhere
-
-<!-- # Créer des liens
-
-Lien symbolique (aka "symlink" ou "soft link") -->
 
 # Conclusion
 
