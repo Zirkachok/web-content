@@ -6,22 +6,14 @@ tags       = ["Linux", "LFCE-LFCS"]
 categories = ["Informatique"]
 menu       = ""
 banner     = "banners/placeholder.png"
+draft      = false
 +++
 
-Pour bien débuter ma série d'articles concernant Linux, son fonctionnement et son administration, je vais passer en revue les commandes de bases nécessaires pour s'orienter et naviguer au sein du système de fichiers. Je parle bien de "commandes", car ici comme dans toute la suite, nous passerons par la ligne de commande.
+Maintenant que l'utilisation de la ligne de commande n'a plus de secret pour nous, il est temps de découvrir l'arborescence d'un système Linux et apprendre comment s'y orienter et naviguer dedans.
 
-Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série. Comme nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système, le faire depuis son environnement de tous les jours peut s'avérer risqué si vous ne savez pas exactement ce que vous faites.
+<!-- Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série. Comme nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système, le faire depuis son environnement de tous les jours peut s'avérer risqué si vous ne savez pas exactement ce que vous faites. -->
 
-Ceci étant dit, plongeons nous dans cette fameuse ligne de commande, et voyons commant nous repérer et naviguer dans un système Linux. 
-
-<div class="warning">Il s'agit ici d'une introduction destinée aux débutants. Pour ceux d'entre vous déjà familiers avec la ligne de commande, vous n'apprendrez probablement rien de nouveau dans cet article.</div>
-
-# L'interpréteur de commandes
-
-L'interpréteur de commandes (aussi appelé "ligne de commande") permet d'accéder aux fonctions propres aux système d'exploitation par le biais de commandes données en entrée (dans notre cas, tapées au clavier). Il existe de nombreux interpréteurs, les plus courant étant le Bourne Shell (*sh*), le Bourne-Again Shell (*bash*), le Z shell (*zsh*), etc., le plus répendu actuellement (et par défaut sur de nombreuses distributions de Linux) étant bash.
-
-En mode graphique, la ligne de commande est accessible sur les distributions Linux par défaut via les applications dédiées ("Console", "Terminal", etc.,). Avec l'expérience il est souvent bien plus simple et rapide de gérer son système Linux de cette manière que graphiquement. Dans le cas des serveurs, qui n'ont pas de mode graphique, il s'agit même d'un passage obligé, alors autant s'y mettre dès maintenant.
-
+<div class="warning">Il s'agit ici d'une introduction destinée aux débutants. Pour ceux d'entre vous déjà familiers avec la ligne de commande, vous y apprendrez peut-être quelque chose, ou peut-être pas, mais dans tous les cas vous pouvez passer sans scrupules à un article plus avancé.</div>
 
 # L'arborescence
 
@@ -31,9 +23,9 @@ Linux repose sur une arborescence pour organiser les fichiers au sein du systèm
 
 Dans cet exemple, le <span style="color:blue">chemin absolu vers le dossier "rainbow"</span> est " _/home/zirka/somewhere/over/rainbow_ " . Comme le <span style="color:magenta">dossier courant</span> est "zirka" (dont le chemin absolu est " */home/zirka* "), le <span style="color:red">chemin relatif vers le dossier "*rainbow*"</span> est " *somewhere/over/rainbow* " .
 
-[^1]: Cette arborescence suit elle même une norme (le "Filesystems Hierarchy Standard", FHS), que nous verrons plus en détail dans un article dédié.
+[^1]: Cette arborescence suit elle même une norme (le "Filesystems Hierarchy Standard", FHS), que nous passerons au crible dans un article dédié.
 
-# S'orienter et se déplacer
+## S'orienter et se déplacer
 
 Dans la pratique, un certain nombre de commandes nous permettent de nous orienter et nous déplacer dans le système de fichier, en ligne de commande. Commençons par découvrir l'arborescence :
 
@@ -42,6 +34,8 @@ Dans la pratique, un certain nombre de commandes nous permettent de nous oriente
  - **tree** : retourne une vue graphique de l'arborescence à partir du chemin courant
 
 Pour toutes ces commandes, il est aussi possible de passer en argument un chemin donné, pour que l'opération soit effectuée à partir de ce dossier.
+
+Au passage, il est possible avec ls et bien d'autres commandes (find, file, etc.) de donner des **motifs "abstraits"** plutôt qu'un nom précis [^1]. Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
 
 Enfin, c'est la commande **cd** (pour "*Change Directory*") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
 
@@ -71,18 +65,22 @@ Cela nous donne donc via le terminal (les commandes que nous entrons sont ici pr
 	somewhere
 
 	$ ls somewhere/over/rainbow
-	high  up  way
+	high.c  up.mk  way.c
 
 	$ ls ~/somewhere/over/rainbow
-	high  up  way
+	high.c  up.mk  way.c
 
 	$ cd /home/zirka/somewhere/over/rainbow
 	$ ls
-	high  up  way
+	high.c  up.mk  way.c
+
+	$ ls *.c
+	high.c  way.c
+
 
 <!-- <span style="color:red">!!! **Important !!!**</span> Lorsque vous avez un doute sur l'utilisation d'une commande, la commande **man** suivie du nom de celle recherchée (e.g. *man pwd* ) vous affichera une page d'aide, avec son utilisation, ses options, etc. -->
 
-# Créer et détruire
+## Créer et détruire
 Nous avons vu comment naviguer dans l'arborescence, reste maintenant à créer, déplacer, éditer et détruire des fichiers. Commencons par la création et le déplacement. Cela se passe avec les commandes suivantes :
 
  - **mkdir** (pour "*Make Directory*") : permet de créer un répertoire avec pour chemin celui donné en argument

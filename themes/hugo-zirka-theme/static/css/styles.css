@@ -2274,6 +2274,7 @@ hr {
   margin-top: 25px;
   margin-bottom: 25px;
   font-style: italic;
+  color: #DC143C;
 }
 
 .article-content h2,
@@ -2281,7 +2282,7 @@ hr {
 .article-content h4,
 .article-content h5,
 .article-content h6 {
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 25px;
   margin-bottom: 25px;
 }

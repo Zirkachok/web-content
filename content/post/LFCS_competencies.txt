@@ -8,7 +8,7 @@ Below follows a subset of the full list of Domains and Competencies covered by t
 Essential Commands - 25%
 
     Log into graphical and text mode consoles
-    Search for files
+x   Search for files
     Evaluate and compare the basic file system features and options
     Compare, create and edit text files
     Compare binary files
@@ -16,7 +16,7 @@ Essential Commands - 25%
     Analyze text using basic regular expressions
     Archive, backup, compress, unpack, and uncompress files
 x   Create, delete, copy, and move files and directories
-x   Create hard and soft links
+    Create hard and soft links
     List, set, and change standard file permissions
     Read, and use system documentation
     Manage access to the root account
