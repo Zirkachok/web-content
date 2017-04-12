@@ -1,3 +1,15 @@
 
 
 - différences entre interpréteurs de commande (bash, sh, zsh)
+- git tips ( https://delicious-insights.com/fr/articles/git-bisect/ )
+- FHS ( https://doc.ubuntu-fr.org/arborescence && https://fr.wikipedia.org/wiki/Filesystem_Hierarchy_Standard && http://formation-debian.via.ecp.fr/filesystem.html )
+- taches Cron ( http://www.generation-linux.fr/index.php?post/2009/02/11/Cours-Linux-%3A-Automatisation-de-taches-avec-Cron )
+- fstab ( https://fr.wikipedia.org/wiki/Fstab )
+- python docstrings ( http://sametmax.com/les-docstrings/ )
+- créer un service ( https://doc.ubuntu-fr.org/tutoriel/comment_transformer_un_programme_en_service )
+- des versions stables de noyau ( https://plus.google.com/+gregkroahhartman/posts/KTnJT51UfNt?sfc=false )
+- cgroups ( https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Resource_Management_Guide/ch01.html )
+- sys/class vs. /dev ( https://www.reddit.com/r/linuxquestions/comments/2rnjwm/difference_between_sysclass_and_dev_directories/ && http://elinux.org/CI20_GPIO_LED_Blink_Tutorial && http://unix.stackexchange.com/questions/119680/difference-between-dev-and-sys-class )
+- shm ( http://www.leeroy.me/ques-ce-que-dev-shm-sous-linux-et-quand-est-il-utilise/ )
+- tpm ( https://wiki.archlinux.org/index.php/Trusted_Platform_Module )
+- sed ( https://doc.ubuntu-fr.org/sed )

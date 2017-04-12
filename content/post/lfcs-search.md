@@ -47,7 +47,7 @@ Et par l'exemple, cela donne :
 Par contre, pour des recherches plus précises et dans un dossier en particulier, on se tournera vers la commande **find**. Elle prends en argument le chemin du dossier à partir duquel la recherche sera effectuée, et listera les fichiers présents dans le dossier et ses sous-dossiers. Il est aussi possible de lui spécifier des filtres avec les options, comme les quelques exemples suivants (plus de détails dans le manuel) :
 
  - **-maxdepth _x_** : Ne garde que les fichiers contenus dans une suite d'au plus _x_ dossiers (i.e. ayant une profondeur de _x_). 
- - **-name** : Fichiers dont le 
+ - **-name _x_** : Fichiers dont le nom est _x_
  - **-type** : Filtre les fichiers par type
   - **-type d** pour les dossiers
   - **-type f** pour les fichiers
@@ -90,7 +90,8 @@ Et dans la pratique, cela donne:
 	./content/post/lfcs-commandline.md
 	./content/post/lfcs-search.md
 
+	find . -name test.txt
+	./content/test.txt
 
-Pour rappel, il est possible avec find et bien d'autres commandes (ls, file, etc.) de donner des **motifs "abstraits"**  plutôt qu'un nom précis [^1]. Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
-
-[^1]: C'est ce que l'on appelle des " expressions régulières ". Plus à ce sujet dans un prochain article.
+	find . -name *golang.md
+	./content/post/pourquoi-golang.md

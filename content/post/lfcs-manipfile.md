@@ -32,6 +32,10 @@ Je vous ai présenté dans mon précédent article comment créer, lister et dé
 
 Pour éditer ces fichiers, il nous faudra utiliser une application spécifique, ma préférence allant pour **vim**, mais cela fera l'objet d'un autre article. Nous verrons aussi plus tard quelques méthodes de manipulation avancée sur ces fichiers (trier et filtrer les données, etc.).
 
+
+# Comparer des fichiers entre eux
+
+<!-- 
 # Chercher dans l'arborescence
 
 À ce stade là, nous savons déjà faire beaucoup de choses pour manipuler l'arborescence. Reste que lorsqu'on cherche un fichier précis sans savoir où il se trouve exactement, les choses se compliquent. C'est là que la commande **locate** entre en jeu. Avec en argument un ou plusieurs motif(s), elle permet de lister tous les chemins contenant un des motifs en question. Quelques options permettent d'affiner ces recherches :
@@ -81,7 +85,7 @@ Il en existe beaucoup, je vous laisserai donc les découvrir en lisant le manuel
 
 C'est là que la commande **find** intervient. Elle prends en argument le chemin du dossier à partir duquel la recherche sera effectuée, et listera les fichiers présents dans le dossier et ses sous-dossiers. Il est aussi possible de spécifier des recherches particulières avec les options. Il en existe beaucoup, je vous laisserai donc les découvrir en lisant le manuel (voir plus bas) et en testant : **-name**, **-type**, **-perm**, **-user**, **-ctime**, **-mtime**, **-atime**, **-size**, etc.
 
-Au passage, il est possible avec find et bien d'autres commandes (ls, file, etc.) de donner des " *motifs* " plutôt qu'un nom précis, grâce à ce que l'on appelle des " expressions régulières " (plus à ce sujet dans un prochain article). Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
+Au passage, il est possible avec find et bien d'autres commandes (ls, file, etc.) de donner des " *motifs* " plutôt qu'un nom précis, grâce à ce que l'on appelle des " expressions régulières " (plus à ce sujet dans un prochain article). Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ . -->
 
 <!-- # Maîtriser la ligne de commande
 

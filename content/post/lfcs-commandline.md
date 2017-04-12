@@ -13,9 +13,6 @@ draft      = false
 
 Pour bien débuter ma série d'articles concernant Linux, son fonctionnement et son administration, je vous propose de nous plonger dans la fameuse ligne de commande pour en découvrir l'intérêt et le fonctionnement. Et en bonus, je vous livrerai quelques conseils pour y être plus rapide et efficace!
 
-
-
-
 <!-- je vais passer en revue les commandes et rde bases nécessaires pour s'orienter et naviguer au sein du système de fichiers. Je parle bien de "commandes", car ici comme dans toute la suite, nous passerons par la ligne de commande. -->
 
 <!-- Avant toute chose, je recommande d'utiliser une Sandbox (un espace de test dédié et isolé) pour réaliser les exercices et manipulations de cette série. Comme nous allons être amenés à réaliser des manipulations plus ou moins critiques et à altérer le fonctionnement du système, le faire depuis son environnement de tous les jours peut s'avérer risqué si vous ne savez pas exactement ce que vous faites. -->
@@ -71,3 +68,8 @@ De manière générale, ayez le réflèxe de lire le manuel pour toute nouvelle 
 
 
 Essayez d'utiliser ces commandes et raccourcis lors de vos tests, exercices, ou simplement sans raison particulière et vous verrez, vous ne pourrez plus vous en passer. D'ailleurs, cela vaut aussi pour la ligne de commande elle-même, alors [Jetzt geht's los](https://fr.wikipedia.org/wiki/Jetzt_geht's_los)!
+
+<!-- 
+REFS :
+	https://www.linux.com/learn/intro-to-linux/2017/4/fabulous-bash-navigation-shortcuts
+ -->

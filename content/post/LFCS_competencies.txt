@@ -16,9 +16,9 @@ x   Search for files
     Analyze text using basic regular expressions
     Archive, backup, compress, unpack, and uncompress files
 x   Create, delete, copy, and move files and directories
-    Create hard and soft links
+x   Create hard and soft links
     List, set, and change standard file permissions
-    Read, and use system documentation
+x   Read, and use system documentation
     Manage access to the root account
 
 Operation of Running Systems - 20%

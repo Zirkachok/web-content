@@ -1,5 +1,5 @@
 +++
-title      = "LFCS : Navigation dans un système Linux"
+title      = "LFCS : Naviguer dans un système Linux"
 date       = "2017-02-14T16:14:27+01:00"
 author     = "jul"
 tags       = ["Linux", "LFCE-LFCS"]
@@ -35,7 +35,7 @@ Dans la pratique, un certain nombre de commandes nous permettent de nous oriente
 
 Pour toutes ces commandes, il est aussi possible de passer en argument un chemin donné, pour que l'opération soit effectuée à partir de ce dossier.
 
-Au passage, il est possible avec ls et bien d'autres commandes (find, file, etc.) de donner des **motifs "abstraits"** plutôt qu'un nom précis [^1]. Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
+Au passage, il est possible avec ls et bien d'autres commandes (find, file, etc.) de donner des **motifs "abstraits"** plutôt qu'un nom précis. Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
 
 Enfin, c'est la commande **cd** (pour "*Change Directory*") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
 
@@ -159,7 +159,8 @@ En pratique, cela nous donne :
 	├── config.xml
 	└── somewhere
 
-# Conclusion
+
+
 
 Nous arrivons maintenant à la fin de notre premier acticle d'une longue série dédiée aux certifications de la fondation Linux. Nous avons abordé une première partie des commandes essentielles à connaître pour utiliser le terminal, en passant en revue les moyens de se repérer, créer et détruire dans l'arborescence Linux. Le prochain article complètera ce thème en abordant la question des liens, de la manipulation de fichiers, du manuel, et bien plus encore.
 
