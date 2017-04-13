@@ -37,7 +37,7 @@ Pour toutes ces commandes, il est aussi possible de passer en argument un chemin
 
 Au passage, il est possible avec ls et bien d'autres commandes (find, file, etc.) de donner des **motifs "abstraits"** plutôt qu'un nom précis. Sans entrer dans les détails, il est possible d'utiliser le caractère __*__ pour désigner "tout". Par exemple, la commande " _ls *.bin_ " listera tous les fichiers dont le nom finit par _.bin_ .
 
-Enfin, c'est la commande **cd** (pour "*Change Directory*") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* l'identifiant de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
+Enfin, c'est la commande **cd** (pour "*Change Directory*") qui nous permet de nous déplacer. Si elle n'est pas complétée d'un argument, elle nous amènera directement au répertoire par défaut. Le plus souvent, il s'agit du répertoire personnel de l'utilisateur courant, dont le chemin par défaut est " */home/username* " avec *username* le nom de l'utilisateur. Il est aussi possible de donner à *cd* un chemin absolu ou relatif au dossier courant pour s'y déplacer.
 
 À noter qu'il existe aussi certains raccourcis, comme :
 

@@ -13,3 +13,4 @@
 - shm ( http://www.leeroy.me/ques-ce-que-dev-shm-sous-linux-et-quand-est-il-utilise/ )
 - tpm ( https://wiki.archlinux.org/index.php/Trusted_Platform_Module )
 - sed ( https://doc.ubuntu-fr.org/sed )
+- Zephyr ( https://en.wikipedia.org/wiki/Zephyr_(operating_system) )
