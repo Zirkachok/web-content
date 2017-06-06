@@ -1,4 +1,4 @@
-- extended article on permissions (setuid, setgit, sticky bit, ...)
+- Kernel, userspace, ...
 
 
 - différences entre interpréteurs de commande (bash, sh, zsh)
