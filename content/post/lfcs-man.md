@@ -1,6 +1,6 @@
 +++
 title      = "LFCS : La documentation passée au crible"
-date       = "2017-04-11T15:59:20+02:00"
+date       = "2017-05-22T09:21:55+02:00"
 author     = "jul"
 tags       = ["Linux", "LFCE-LFCS"]
 categories = ["Informatique"]
@@ -10,6 +10,8 @@ draft      = true
 +++
 
 <!-- ê î ô û -->
+
+Aujourd'hui, nous allons aborder un sujet souvent laissé de côté
 
 Aussi expérimenté que vous soyez, il est simplement impossible de retenir toutes les commandes disponibles sous Unix/Linux, leur rôle, leur fonctionnement, leurs paramètres et leurs arguments. Heureusement, il existe une documentation simple d'accès en ligne de commande et très fournie : le manuel.
 
@@ -29,4 +31,4 @@ Internet (of course) :
  - The Linux Documentation Project (LDP)
  - stackexchange (serverfault, ...)
 
- <!-- https://www.youtube.com/watch?v=59jnWX_EzTY&index=123&list=WL -->
+<!-- https://www.youtube.com/watch?v=59jnWX_EzTY&index=123&list=WL -->

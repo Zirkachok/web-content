@@ -8,7 +8,7 @@ banner     = "banners/placeholder.png"
 draft      = true
 +++
 
-ilà ! C'est chose faite, je viens enfin de mettre en place mon blog. Je trouvais l'ancienne version de mon site personnel un peu trop statique à mon goût, je compte ainsi utiliser pleinement le concept du blog pour le rendre un peu plus vivant.
+Voilà ! C'est chose faite, je viens enfin de mettre en place mon blog. Je trouvais l'ancienne version de mon site personnel un peu trop statique à mon goût, je compte ainsi utiliser pleinement le concept du blog pour le rendre un peu plus vivant.
 
 Tout d'abord je me présente, Yoann, 22 ans et étudiant en informatique en dernière année d'école d'ingénieur à l'UTT en spécialité systèmes embarqués.
 

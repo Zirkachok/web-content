@@ -1,3 +1,6 @@
+$ ionic serve --lab
+
+
 - extended article on permissions (setuid, setgit, sticky bit, ...)
 
 
