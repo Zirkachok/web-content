@@ -33,14 +33,14 @@ _Vous trouverez ci-dessous un sous-ensemble de la liste complète des domaines e
 - Comparer des fichiers binaires
 - Utiliser les redirections des flux d'entrée et de sortie (e.g. >, >>, |, 2>)
 - Analyser du texte en utilisant les expressions régulières de base
-- Archiver, sauvegarder, compresser et décompresser des fichiers
+- <span style="color:red">Archiver, sauvegarder, compresser et décompresser des fichiers</span> : [[ici]]({{< ref "lfcs-archive.md" >}})
 - <span style="color:red">Créer, supprimer, copier et déplacer des fichiers et répertoires</span> : [[ici]]({{< ref "lfcs-navigate.md" >}})
 - <span style="color:red">Créer des liens physiques et symboliques</span> : [[ici]]({{< ref "lfcs-links.md" >}})
 - <span style="color:red">Lister, affecter et modifier les permissions standard de fichiers</span> : [[ici]]({{< ref "lfcs-rights.md" >}}) et [[là]]({{< ref "lfcs-rights-2.md" >}})
 - Lire et utiliser la documentation système
 - Gérer les accès au compte superutilisateur (root)
 
-Avancement : <span style="color:red">7%</span> / 25%
+Avancement : <span style="color:red">10%</span> / 25%
 
 <!-- 
 Essential Commands - 25%
@@ -155,6 +155,11 @@ User and Group Management - 15%
 
 ## Virtualisation (5%)
 
+- Configurer un hyperviseur pour héberger des hôtes virtuels
+- Accéder à une console de la machine virtuelle (VM)
+- Configurer le système pour démarrer des VMs au démarrage
+- Évaluer l'utilisation mémoire de VMs
+- Redimentionner la RAM et l'espace de stockage de VMs
 
 <!-- Virtualization - 5%
 
@@ -167,6 +172,19 @@ User and Group Management - 15%
 ## Gestion des espaces de stockage (10%)
 
 - Lister, créer, supprimer et modifier les partitions de stockage
+- Créer, modifier, et supprimer des volumes logiques
+- Étendre des volumes logiques et systèmes de fichiers existants
+- Créer et configurer des partitions cryptées
+- Configurer le système pour monter des systèmes de fichiers au démarrage
+- Configurer et gérer le [Swap](https://fr.wikipedia.org/wiki/M%C3%A9moire_virtuelle#Swapping)
+- Ajouter de nouvelles partitions et volumes logiques
+- Assembler des partitions comme des dispositifs RAID
+- Configurer le système pour monter à la demande des systèmes de fichiers standard, encryptés ou réseau
+- Créer et gérer les Access Control Lists (ACLs) de systèmes de fichiers
+- Diagnostiquer et corriger les problèmes de permissions fichiers
+- <span style="color:red">Mettre en place des quotas disque sur les systèmes de fichiers pour les utilisateurs et groupes</span> : [[ici]]({{< ref "lfcs-disk-quotas.md" >}})
+
+Avancement : <span style="color:red">1%</span> / 10%
 
 <!-- Storage Management - 10%
 

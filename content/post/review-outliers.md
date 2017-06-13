@@ -7,7 +7,7 @@ tags        = ["Divers", "Résumés"]
 categories  = ["misc"]
 images      = []
 banner      = ""
-draft       = false
+draft       = true
 +++
 
 <!-- ê î ô -->
