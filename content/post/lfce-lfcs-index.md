@@ -68,9 +68,10 @@ Essential Commands - 25%
 - Changer la priorité d'un processus
 - Identifier l'utilisation des ressources par processus
 - Localiser et analyser les fichiers de logs système
-- Programmer des tâches 
+- Programmer des tâches pour se lancer à une certaine date et heure
+- Vérifier la complétion de tâches planifiées
 
-Avancement : <span style="color:red">0%</span> / 20% (0/13)
+Avancement : <span style="color:red">0%</span> / 20% (0/17)
 
 <!--
 Operation of Running Systems - 20%

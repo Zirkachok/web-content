@@ -22,10 +22,10 @@ Linux permet d'y parvenir facilement, via le fichier **/etc/security/limits.conf
 
 - **-a** : Affiche les limites pour chaque ressource système concernée
 - **-f** : Affiche (si seul) ou fixe (si suivi d'un nombre) la **taille maximale d'un fichier** créé
-- **-n** : Affiche ou fixe le nombre maximum de fichiers qui peuvent être ouverts en même temps
-- **-t** : Affiche ou fixe le temps CPU maximal pour un CPU (i.e. son utilisation des ressources processeur)
-- **-u** : Affiche ou fixe le nombre maximal de processus pour un utilisateur
-- **-v** : Affiche ou fixe la quantité maximale de mémoire virtuelle disponible pour un processus
+- **-n** : Affiche ou fixe le **nombre maximum de fichiers ouverts** simultanément
+- **-t** : Affiche ou fixe le **temps CPU maximal** pour un processus (i.e. son utilisation des ressources processeur)
+- **-u** : Affiche ou fixe le **nombre maximal de processus** pour un utilisateur
+- **-v** : Affiche ou fixe la **quantité maximale de mémoire virtuelle** disponible pour un processus
 
 Comme pour les quotas disque, _ulimit_ gère des limites strictes (**hard limits**) avec l'option **-H**, et non strictes (**soft limits**) avec l'option **-S**[^3]. Sans aucune de ces deux options, les deux types de limites sont motifiées simultanément.
 
@@ -37,9 +37,36 @@ D'autres limites ne sont modifiables qu'en écrivant directement dans le fichier
 - maxlogins : nombre maximal de connections en simultané à chaque utilisateur (le superutilisateur n'étant pas concerné)
 - maxsyslogins : nombre maximal d'utilisateurs connectés en simultané au système
 - nice : priorité maximale des processus de l’utilisateur
-- ... 
+- ...
 
-<!-- Faire un exemple (depuis scaleway) -->
+Dans la pratique, cela nous donne :
+
+	$ ulimit -u
+	30353
+
+	$ ulimit -u 300
+
+	$ ulimit -u
+	300
+
+	$ ulimit -a
+	core file size          (blocks, -c) 0
+	data seg size           (kbytes, -d) 1000000
+	scheduling priority             (-e) 0
+	file size               (blocks, -f) unlimited
+	pending signals                 (-i) 772466
+	max locked memory       (kbytes, -l) 64
+	max memory size         (kbytes, -m) 1000000
+	open files                      (-n) 1024
+	pipe size            (512 bytes, -p) 8
+	POSIX message queues     (bytes, -q) 819200
+	real-time priority              (-r) 0
+	stack size              (kbytes, -s) 8192
+	cpu time               (seconds, -t) unlimited
+	max user processes              (-u) 30353
+	virtual memory          (kbytes, -v) unlimited
+	file locks                      (-x) unlimited
+
 
 ## Pour aller plus loin...
 
