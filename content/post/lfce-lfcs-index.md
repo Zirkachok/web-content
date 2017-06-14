@@ -37,10 +37,10 @@ _Vous trouverez ci-dessous un sous-ensemble de la liste complète des domaines e
 - <span style="color:red">Créer, supprimer, copier et déplacer des fichiers et répertoires</span> : [[ici]]({{< ref "lfcs-navigate.md" >}})
 - <span style="color:red">Créer des liens physiques et symboliques</span> : [[ici]]({{< ref "lfcs-links.md" >}})
 - <span style="color:red">Lister, affecter et modifier les permissions standard de fichiers</span> : [[ici]]({{< ref "lfcs-rights.md" >}}) et [[là]]({{< ref "lfcs-rights-2.md" >}})
-- Lire et utiliser la documentation système
+- <span style="color:red">Lire et utiliser la documentation système</span> : [[ici]]({{< ref "lfcs-man.md" >}})
 - Gérer les accès au compte superutilisateur (root)
 
-Avancement : <span style="color:red">10%</span> / 25%
+Avancement : <span style="color:red">12%</span> / 25% (6/13)
 
 <!-- 
 Essential Commands - 25%
@@ -70,7 +70,7 @@ Essential Commands - 25%
 - Localiser et analyser les fichiers de logs système
 - Programmer des tâches 
 
-Avancement : <span style="color:red">0%</span> / 20%
+Avancement : <span style="color:red">0%</span> / 20% (0/13)
 
 <!--
 Operation of Running Systems - 20%
@@ -100,11 +100,11 @@ Operation of Running Systems - 20%
 - <span style="color:red">Créer, supprimer et modifier les groupes locaux et leur appartenance</span> : [[ici]]({{< ref "lfcs-rights.md" >}}) et [[là]]({{< ref "lfcs-rights-2.md" >}})
 - Manage system-wide environment profiles
 - Manage template user environment
-- Configuer les limites de ressources des utilisateurs
+- <span style="color:red">Configuer les limites de ressources des utilisateurs</span> : [[ici]]({{< ref "lfcs-user-limits.md" >}})
 - Gérer les processus utilisateurs
 - Configurer le système d'authentification PAM 
 
-Avancement : <span style="color:red">4%</span> / 15%
+Avancement : <span style="color:red">7%</span> / 15% (3/7)
 
 <!--
 User and Group Management - 15%
@@ -132,6 +132,10 @@ User and Group Management - 15%
     Synchronize time using other network peers -->
 
 ## Configuration des services (10%)
+- Configurer un serveur DNS basique
+- Maintenir une zone DNS
+- Configurer un serveur FTP
+
 
 <!-- Service Configuration - 10%
 
@@ -184,7 +188,7 @@ User and Group Management - 15%
 - Diagnostiquer et corriger les problèmes de permissions fichiers
 - <span style="color:red">Mettre en place des quotas disque sur les systèmes de fichiers pour les utilisateurs et groupes</span> : [[ici]]({{< ref "lfcs-disk-quotas.md" >}})
 
-Avancement : <span style="color:red">1%</span> / 10%
+Avancement : <span style="color:red">1%</span> / 10% (1/12)
 
 <!-- Storage Management - 10%
 

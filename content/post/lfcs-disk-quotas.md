@@ -46,25 +46,5 @@ Enfin, il est possible de vérifier et mettre à jour les informations sur les q
 
 [^4]: La taille des blocs mémoire variant selon le matériel.
 
-<!-- 
-
-When using edquota , you can adjust quotas independently for every fi lesystem for which
-quotas are enabled and separately for every user or group. (To edit quotas for a group, use
-the -g option, as in edquota -g users to adjust quotas for the users group.)
-
-A few more quota-related commands are useful. The fi rst is quotacheck , which verifi es
-and updates quota information on quota-enabled disks. This command is normally run
-as part of the quota package’s startup script, but you may want to run it periodically (say,
-once a week) as a cron job. (Chapter 7 describes cron jobs.) Although theoretically not
-necessary if everything works correctly, quotacheck ensures that quota accounting doesn’t
-become inaccurate. 
-
-The second useful auxiliary quota command is repquota , which sum-
-marizes the quota information about the fi lesystem you specify or on all fi lesystems if you
-pass it the -a option. This tool can be very helpful in keeping track of disk usage. The
-quota command has a similar effect. The quota tool takes a number of options to have
-them modify their outputs. For instance, -g displays group quotas, -l omits NFS mounts,
-and -q limits output to fi lesystems on which usage is over the limit. Consult quota ’s man
-page for still more obscure options. -->
 
 <!-- https://wiki.archlinux.org/index.php/disk_quota -->
