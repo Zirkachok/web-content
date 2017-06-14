@@ -18,13 +18,13 @@ L'utilisation de ces ressources, telles que la taille maximale des fichiers, le 
 
 [^1]: C'est ce que l'on appelle une [fork bomb](https://www.admin-linux.fr/?p=7530).
 
-Linux permet d'y parvenir facilement, via le fichier **/etc/security/limits.conf**. Ce fichier est chargé à l'ouverture d'une session dans le système par _PAM_[^2], et définit l'ensemble des limites apposées pour un grand nombre de paramètres système. Pour changer ces paramètres, plutôt que d'écrire directement dans le fichier, nous utiliserons la commande **ulimit** avec les options suivantes (entre autres) :
+Linux permet d'y parvenir facilement, via le fichier **/etc/security/limits.conf**. Ce fichier est chargé à l'ouverture d'une session dans le système par _PAM_[^2], et définit l'ensemble des limites apposées pour un grand nombre de paramètres système, à chaque utilisateur. Pour changer ces paramètres, plutôt que d'écrire directement dans le fichier, nous utiliserons la commande **ulimit** avec les options suivantes (entre autres) :
 
 - **-a** : Affiche les limites pour chaque ressource système concernée
 - **-f** : Affiche (si seul) ou fixe (si suivi d'un nombre) la **taille maximale d'un fichier** créé
 - **-n** : Affiche ou fixe le **nombre maximum de fichiers ouverts** simultanément
 - **-t** : Affiche ou fixe le **temps CPU maximal** pour un processus (i.e. son utilisation des ressources processeur)
-- **-u** : Affiche ou fixe le **nombre maximal de processus** pour un utilisateur
+- **-u** : Affiche ou fixe le **nombre maximal de processus** simultanément
 - **-v** : Affiche ou fixe la **quantité maximale de mémoire virtuelle** disponible pour un processus
 
 Comme pour les quotas disque, _ulimit_ gère des limites strictes (**hard limits**) avec l'option **-H**, et non strictes (**soft limits**) avec l'option **-S**[^3]. Sans aucune de ces deux options, les deux types de limites sont motifiées simultanément.
@@ -38,6 +38,8 @@ D'autres limites ne sont modifiables qu'en écrivant directement dans le fichier
 - maxsyslogins : nombre maximal d'utilisateurs connectés en simultané au système
 - nice : priorité maximale des processus de l’utilisateur
 - ...
+
+Le fichier _/etc/security/limits.conf_ permet aussi une gestion fine des limites, en fonction des utilisateurs et groupes (faire varier les limites en fonction des utilisateurs, par exemple).
 
 Dans la pratique, cela nous donne :
 
