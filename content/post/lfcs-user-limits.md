@@ -78,3 +78,4 @@ Voici mes inspirations ayant mené à cet article. Vous y trouverez des ressourc
 - [Documentation Red Hat](https://access.redhat.com/solutions/61334) (EN)
 - [Un excellent article sur la question](https://www.admin-linux.fr/controle-des-ressources-systemes-ulimit/) (FR)
 - [Un résumé sur le sujet](http://www.linuxhowtos.org/Tips%20and%20Tricks/ulimit.htm) (EN)
+- [Un bel article de Tecmint](https://www.tecmint.com/set-limits-on-user-processes-using-ulimit-in-linux/) (EN)

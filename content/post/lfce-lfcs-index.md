@@ -68,10 +68,10 @@ Essential Commands - 25%
 - Changer la priorité d'un processus
 - Identifier l'utilisation des ressources par processus
 - Localiser et analyser les fichiers de logs système
-- Programmer des tâches pour se lancer à une certaine date et heure
-- Vérifier la complétion de tâches planifiées
+- <span style="color:red">Programmer des tâches pour se lancer à une certaine date et heure</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
+- <span style="color:red">Vérifier la complétion de tâches planifiées</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
 
-Avancement : <span style="color:red">0%</span> / 20% (0/17)
+Avancement : <span style="color:red">3%</span> / 20% (2/17)
 
 <!--
 Operation of Running Systems - 20%
@@ -103,7 +103,7 @@ Operation of Running Systems - 20%
 - Manage template user environment
 - <span style="color:red">Configuer les limites de ressources des utilisateurs</span> : [[ici]]({{< ref "lfcs-user-limits.md" >}})
 - Gérer les processus utilisateurs
-- Configurer le système d'authentification PAM 
+- Configurer le système d'authentification PAM
 
 Avancement : <span style="color:red">7%</span> / 15% (3/7)
 
