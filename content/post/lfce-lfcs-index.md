@@ -29,8 +29,8 @@ _Vous trouverez ci-dessous un sous-ensemble de la liste complète des domaines e
 - Se connecter en mode graphique et texte
 - <span style="color:red">Effectuer des recherches sur des fichiers</span> : [[ici]]({{< ref "lfcs-search.md" >}}) et [[là]]({{< ref "lfcs-rights-2.md" >}})
 - Évaluer et comparer les fonctionnalités et options des systèmes de fichiers de base
-- Comparer, créer et éditer des fichiers texte
-- Comparer des fichiers binaires
+- <span style="color:red">Comparer, créer et éditer des fichiers texte</span> : [[ici]]({{< ref "lfcs-manipfile.md" >}})
+- <span style="color:red">Comparer des fichiers binaires</span> : [[ici]]({{< ref "lfcs-manipfile.md" >}})
 - Utiliser les redirections des flux d'entrée et de sortie (e.g. >, >>, |, 2>)
 - Analyser du texte en utilisant les expressions régulières de base
 - <span style="color:red">Archiver, sauvegarder, compresser et décompresser des fichiers</span> : [[ici]]({{< ref "lfcs-archive.md" >}})
@@ -40,23 +40,23 @@ _Vous trouverez ci-dessous un sous-ensemble de la liste complète des domaines e
 - <span style="color:red">Lire et utiliser la documentation système</span> : [[ici]]({{< ref "lfcs-man.md" >}})
 - Gérer les accès au compte superutilisateur (root)
 
-Avancement : <span style="color:red">12%</span> / 25% (6/13)
+Avancement : <span style="color:red">16%</span> / 25% (8/13)
 
 <!-- 
 Essential Commands - 25%
 
     Log into graphical and text mode consoles
-    Search for files
+x   Search for files
     Evaluate and compare the basic file system features and options
     Compare, create and edit text files
     Compare binary files
     Use input-output redirection (e.g. >, >>, |, 2>)
     Analyze text using basic regular expressions
-    Archive, backup, compress, unpack, and uncompress files
-    Create, delete, copy, and move files and directories
-    Create hard and soft links
-    List, set, and change standard file permissions
-    Read, and use system documentation
+x   Archive, backup, compress, unpack, and uncompress files
+x   Create, delete, copy, and move files and directories
+x   Create hard and soft links
+x   List, set, and change standard file permissions
+x   Read, and use system documentation
     Manage access to the root account
 -->
 
@@ -65,13 +65,22 @@ Essential Commands - 25%
 - Démarrer, redémarrer et éteindre le système en toute sécurité
 - Démarrer les systèmes manuellement sous différents niveaux de fonctionnement (runlevels)
 - Installer, configurer et dépanner le bootloader
-- Changer la priorité d'un processus
-- Identifier l'utilisation des ressources par processus
+- <span style="color:red">Changer la priorité d'un processus</span> : [[ici]]({{< ref "lfcs-process-use.md" >}})
+- <span style="color:red">Identifier l'utilisation des ressources par processus</span> : [[ici]]({{< ref "lfcs-process-use.md" >}})
 - Localiser et analyser les fichiers de logs système
 - <span style="color:red">Programmer des tâches pour se lancer à une certaine date et heure</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
 - <span style="color:red">Vérifier la complétion de tâches planifiées</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
+- Mettre à jour des logiciels pour maintenir les fonctionnalités et la sécurité
+- Vérifier l'intégrité et disponibilité de ressources
+- Vérifier l'intégrité et disponibilité des processus clé
+- Changer le paramétrage du noyau, de manière persistante ou non
+- Utiliser des scripts pour automatiser des tâches de maintenance
+- Gérer les processus de démarrage et services
+- Lister et identifier les fichiers et contextes de processus SELinux et AppArmor
+- Configurer et modifier les politiques SELinux et AppArmor
+- Installer les logiciels depuis les sources
 
-Avancement : <span style="color:red">3%</span> / 20% (2/17)
+Avancement : <span style="color:red">5%</span> / 20% (4/17)
 
 <!--
 Operation of Running Systems - 20%
@@ -82,8 +91,8 @@ Operation of Running Systems - 20%
     Change the priority of a process
     Identify resource utilization by process
     Locate and analyze system log files
-    Schedule tasks to run at a set date and time
-    Verify completion of scheduled jobs
+x   Schedule tasks to run at a set date and time
+x   Verify completion of scheduled jobs
     Update software to provide required functionality and security
     Verify the integrity and availability of resources
     Verify the integrity and availability of key processes
@@ -110,11 +119,11 @@ Avancement : <span style="color:red">7%</span> / 15% (3/7)
 <!--
 User and Group Management - 15%
 
-    Create, delete, and modify local user accounts
-    Create, delete, and modify local groups and group memberships
+x   Create, delete, and modify local user accounts
+x   Create, delete, and modify local groups and group memberships
     Manage system-wide environment profiles
     Manage template user environment
-    Configure user resource limits
+x   Configure user resource limits
     Manage user processes
     Configure PAM
 -->
@@ -138,7 +147,8 @@ User and Group Management - 15%
 - Configurer un serveur FTP
 
 
-<!-- Service Configuration - 10%
+<!--
+Service Configuration - 10%
 
     Configure a basic DNS server
     Maintain a DNS zone
@@ -156,7 +166,8 @@ User and Group Management - 15%
     Configure HTTP server log files
     Restrict access to a web page
     Diagnose routine SELinux/AppArmor policy violations
-    Configure database server -->
+    Configure database server
+-->
 
 ## Virtualisation (5%)
 
@@ -166,13 +177,15 @@ User and Group Management - 15%
 - Évaluer l'utilisation mémoire de VMs
 - Redimentionner la RAM et l'espace de stockage de VMs
 
-<!-- Virtualization - 5%
+<!--
+Virtualization - 5%
 
     Configure a hypervisor to host virtual guests
     Access a VM console
     Configure systems to launch virtual machines at boot
     Evaluate memory usage of virtual machines
-    Resize RAM or storage of VMs -->
+    Resize RAM or storage of VMs
+-->
 
 ## Gestion des espaces de stockage (10%)
 
@@ -191,7 +204,8 @@ User and Group Management - 15%
 
 Avancement : <span style="color:red">1%</span> / 10% (1/12)
 
-<!-- Storage Management - 10%
+<!--
+Storage Management - 10%
 
     List, create, delete, and modify storage partitions
     Create, modify and delete Logical Volumes
@@ -204,7 +218,11 @@ Avancement : <span style="color:red">1%</span> / 10% (1/12)
     Configure systems to mount standard, encrypted, and network file systems on demand
     Create and manage filesystem Access Control Lists (ACLs)
     Diagnose and correct file permission problems
-    Setup user and group disk quotas for filesystems -->
+x   Setup user and group disk quotas for filesystems 
+-->
+
+
+
 
 
 # Linux Foundation Certified Engineer (LFCE)
@@ -227,7 +245,7 @@ Network administration
 	Produce and deliver reports on system use, outages and user requests
 	Route IP traffic statically and dynamically
 	Troubleshoot network issues
- -->
+-->
 
 ## Systèmes de fichiers
 
@@ -261,7 +279,7 @@ Network security
 
 <!-- 
 Remote access
-	Configure the firewall with iptables
+	Configure the firewall with iptables   ====>>   https://www.linux.com/learn/intro-to-linux/2017/5/building-linux-firewalls-good-old-iptables-part-1
  -->
 
 ## Services HTTP
@@ -291,8 +309,8 @@ HTTP services
 
 <!-- 
 Email services
-Configure email aliases
-Install and configure an IMAP and IMAPS service
-Install and configure an smtp service
-Restrict access to an smtp server
+    Configure email aliases
+    Install and configure an IMAP and IMAPS service
+    Install and configure an smtp service
+    Restrict access to an smtp server
  -->
