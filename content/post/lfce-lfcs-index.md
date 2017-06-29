@@ -67,7 +67,7 @@ x   Read, and use system documentation
 - Installer, configurer et dépanner le bootloader
 - <span style="color:red">Changer la priorité d'un processus</span> : [[ici]]({{< ref "lfcs-process-use.md" >}})
 - <span style="color:red">Identifier l'utilisation des ressources par processus</span> : [[ici]]({{< ref "lfcs-process-use.md" >}})
-- Localiser et analyser les fichiers de logs système
+- <span style="color:red">Localiser et analyser les fichiers de logs système</span> : [[ici]]({{< ref "lfcs-system-logs.md" >}})
 - <span style="color:red">Programmer des tâches pour se lancer à une certaine date et heure</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
 - <span style="color:red">Vérifier la complétion de tâches planifiées</span> : [[ici]]({{< ref "lfcs-schedule-tasks.md" >}})
 - Mettre à jour des logiciels pour maintenir les fonctionnalités et la sécurité
@@ -80,7 +80,7 @@ x   Read, and use system documentation
 - Configurer et modifier les politiques SELinux et AppArmor
 - Installer les logiciels depuis les sources
 
-Avancement : <span style="color:red">5%</span> / 20% (4/17)
+Avancement : <span style="color:red">6%</span> / 20% (5/17)
 
 <!--
 Operation of Running Systems - 20%

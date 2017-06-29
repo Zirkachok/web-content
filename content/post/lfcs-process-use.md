@@ -64,7 +64,7 @@ Il est donc possible de lister les processus en cours d'exécution (ou _actifs_)
 
 - **-x** : retourne tous les processus actifs de l'utilisateur courant
 - **-ax** : retourne tous les processus actifs pour tous les utilisateurs
-- ** -p PID** : retourne le processus actif dont l'identifiant unique est _PID_
+- **-p PID** : retourne le processus actif dont l'identifiant unique est _PID_
 
 _ps_ donne également pour chaque processus des informations basiques sur le processus. Avec l'option **-u**, _ps_ fournit en plus des informations sur l'utilisateur possédant le processus, le pourcentage processeur/CPU et mémoire dédié, etc.
 
@@ -73,8 +73,8 @@ Dans la pratique, cela nous donne :
 	$ ps -aux
 	USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 	...
-	zirka     3282  0.0  0.5 490924 21504 ?        Sl   08:27   0:01 /usr/lib/x86_64-linux-gnu/xfce4/panel-plugins/xfce4-xkb-plugin  8 6291499 xkb-plugin Dispositions du clavier Gre
-	zirka     3292  0.0  0.1 287132  4748 ?        Sl   08:27   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+	zirka     3282  0.0  0.5 490924 21504 ?        Sl   08:27   0:01 /usr/lib/x86_64-linux-gnu/xfce4/panel
+	zirka     3292  0.0  0.1 287132  4748 ?        Sl   08:27   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-moni
 	root      3295  0.0  0.2 367848  8516 ?        Ssl  08:27   0:00 /usr/lib/udisks2/udisksd --no-debug
 	zirka     3303  0.0  0.0 259036  2724 ?        Sl   08:27   0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
 	zirka     3308  0.0  0.1 405112  4900 ?        Sl   08:27   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
