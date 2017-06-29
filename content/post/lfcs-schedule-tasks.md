@@ -62,7 +62,7 @@ Lors de la création d'une tâche _cron_, il est aussi possible de remplacer les
 
 Lorsqu'une tâche est exécutée automatiquement, _cron_ écrit un ou plusieurs _logs_[^3] pour le signaler. Ces logs sont écrits par défaut dans le fichier **/var/log** ou /var/log/syslog[^4]. Par défaut, _cron_ n'enregistre que le début d'exécution des tâches (i.e. le fait qu'elles aient été lancées), mais il est possible d'indiquer à la commande _cron_ de logguer plus ou moins de choses. Pour cela, il suffit de l'appeler avec l'option **-L** suivie d'une somme des valeurs suivantes (en fonctions des logs que nous voulons voir apparaitre) :
 
-[^3]: Un [_log_](https://en.wikipedia.org/wiki/Logfile) est un événement enregistré par le système pour historisation.
+[^3]: Un [_log_](https://en.wikipedia.org/wiki/Logfile) est un événement enregistré par le système pour historisation. Voir [mon article sur le sujet]({{< ref "lfcs-system-logs.md" >}}) pour plus de détails.
 [^4]: Nous verrons plus en détail dans un prochain article comment analyser les logs système.
 
 - **1** : log le début d'exécution de toute tâche _cron_

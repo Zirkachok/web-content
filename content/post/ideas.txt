@@ -1,5 +1,10 @@
 - Kernel, userspace, ...
 
+
+lspci, detailed information about all PCI buses and devices in the system
+lsusb, detailed information about USB ports and devices
+uname prints the name, version and other details about the current machine and the operating system
+
 $ ionic serve --lab
 
 
