@@ -129,7 +129,7 @@ Cela nous donne par exemple :
 
 	$ /etc/init.d/rsyslog restart
 
-	$ logger -p local3.info "Everything is going fine..."  
+	$ logger -p local3.info "Everything is going fine..."
 
 	$ ls /var/log
 	...
@@ -139,20 +139,6 @@ Cela nous donne par exemple :
 
 	$ cat loc3testinfo.log
 	Jun  29 13:20:56 Epinet zirka:  Everything is going fine...
-
-<!-- 
-So now it's time for us to create our own log files.
-
-To test this, we will do the following
-
-    Add a log file specification in /etc/rsyslog.conf file
-
-    Restart the rsyslog daemon
-
-    Test the configuration using the logger utility
-
-In the following example, I am adding two new lines in my CentOS Linux system's rsyslog.conf file. As you can see, each of them are coming from a facility called local4 and they have different priorities.
- -->
 
 
 # Pour aller plus loin...
