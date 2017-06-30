@@ -88,9 +88,9 @@ Operation of Running Systems - 20%
     Boot, reboot, and shut down a system safely
     Boot systems into different runlevels manually
     Install, configure and troubleshoot the bootloader
-    Change the priority of a process
-    Identify resource utilization by process
-    Locate and analyze system log files
+x   Change the priority of a process
+x   Identify resource utilization by process
+x   Locate and analyze system log files
 x   Schedule tasks to run at a set date and time
 x   Verify completion of scheduled jobs
     Update software to provide required functionality and security
@@ -130,7 +130,20 @@ x   Configure user resource limits
 
 ## Réseaux (15%)
 
-<!-- Networking - 15%
+- Configurer le réseau et la résolution de noms, de manière statique ou dynamique
+- Configurer les services réseau pour se lancer automatiquement au démarrage du système (boot)
+- Implémenter le filtrage de paquets
+- Configurer les paramètres du pare-feu
+- Démarrer, arrêter et vérifier l'état des services réseau
+- Router le trafic IP statiquement
+- Router le trafic IP dynamiquement
+- Synchroniser l'horodatage du système via le réseau
+
+Avancement : <span style="color:red">0%</span> / 15% (0/8)
+
+
+<!--
+Networking - 15%
 
     Configure networking and hostname resolution statically or dynamically
     Configure network services to start automatically at boot
@@ -139,9 +152,11 @@ x   Configure user resource limits
     Start, stop, and check the status of network services
     Statically route IP traffic
     Dynamically route IP traffic
-    Synchronize time using other network peers -->
+    Synchronize time using other network peers
+-->
 
 ## Configuration des services (10%)
+
 - Configurer un serveur DNS basique
 - Maintenir une zone DNS
 - Configurer un serveur FTP
