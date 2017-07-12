@@ -39,19 +39,20 @@ Une fois l'architecture logicielle bien en place, reste le code lui-même. C'est
 
 Un projet complexe est en règle générale développé par plusieurs ingénieurs en parallèle. Dans le monde de l'informatique, chaque développeur a une manière de coder qui lui est propre, et un logiciel rédigé à plusieurs mains peut vite devenir illisible si aucun cadre n'est défini. Ce cadre, ce sont les **règles de codage**. Elles définissent les pratiques imposées, comme par exemple le nommage des variables/classes/fonctions/méthodes, le [style d'indentation](https://fr.wikipedia.org/wiki/Style_d%27indentation), ou encore le découpage des fichiers sources, et permettent d'uniformiser le "style d'écriture" du code source, et ainsi le rendre plus lisible et maintenable.
 
-Il existe également une norme de programmation reconnue, devenue standard _de facto_ dans les systèmes critiques en C/C++ : [MISRA](https://fr.wikipedia.org/wiki/MISRA_C). Cette norme garantit un socle commun et extérieur, et donc des règles cohérentes et adaptées. MISRA définit des règles et directives (c'est à dire des règles plus ouvertes, sujettes à interprétation), classées comme "obligatoires" (mandatory), "requises" (required) et "conseillées" (advisory).
+Il existe également une norme de programmation reconnue, devenue standard _de facto_ dans les systèmes critiques en C/C++ : [**MISRA**](https://fr.wikipedia.org/wiki/MISRA_C). Cette norme garantit un socle commun et indépendant, et donc des règles cohérentes et adaptées. MISRA définit des règles et directives (c'est à dire des règles plus ouvertes, sujettes à interprétation), classées comme "obligatoires" (mandatory), "requises" (required) et "conseillées" (advisory).
 
 Pour en citer quelques unes :
 
 - Règle 8.3 (requise): Pour chaque paramètre de fonction, le type donné dans la déclaration et la définition doivent être identiques, et les types des valeurs de retour doivent aussi être identiques
-- Règle 16.5 (requise): Les fonctions sans paramètre doivent être définies et déclarées avec _void_
 - Règle 16.10 (requise): Si une fonction renvoie une valeur de retour d'erreur, cette valeur doit être testée.
+- Règle 14.10 (requise): Tous les constructions _if ... else if_ doivent être terminées par une clause _else_
+- ...
 
 Le respect de ces règles de codage passe souvent par une vérification et relecture du code (idéalement, par une personne indépendante au projet), et est complétée par une documentation rigoureuse et exhaustive des fonctions d'entrée/sortie des modules (au moins). Certains formalismes de commentaire permettent même à des outils comme [Doxygen](https://fr.wikipedia.org/wiki/Doxygen) de générer une documentation en ligne ou papier.
 
-Ces phases sont cependant loin d'être suffisantes, et une analyse automatique du code source est souvent indispensable : on parle alors d'**analyse statique**. L'analyse statique est effectuée par un logiciel[^2], qui déterminera notamment si les règles de codage et/ou MISRA sont respectés, si il existe du code mort (du code ne pouvant être atteint, quelles que soient les chemins d'exécution), ou encore si certaines parties sont susceptibles de générer des bugs dans certaines conditions (typiquement, détecter les dépassements de tampon ou les accès mémoire).
+Ces phases sont cependant loin d'être suffisantes, et une analyse automatique du code source est souvent indispensable : on parle alors d'**analyse statique**. L'analyse statique est effectuée par un logiciel[^2], qui déterminera notamment si les règles de codage et/ou MISRA sont respectés, si il existe du [code mort](https://en.wikipedia.org/wiki/Dead_code) (du code ne pouvant être atteint, quels que soient les chemins d'exécution), ou encore si certaines parties sont susceptibles de générer des bugs dans certaines conditions (typiquement, détecter les potentiels dépassements de tampon ou les accès mémoire).
 
-[^2]: Pour n'en citer que quelques uns, [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/) ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
+[^2]: Pour n'en citer que quelques uns : [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/) ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
 
 
 # Couverture de code
@@ -63,7 +64,7 @@ Il existe plusieurs principes, dont :
 - **Couverture des fonctions** (_Function coverage_) : "Chaque fonction dans le programme a-t-elle été appelée?"
 - **Couverture des instructions** (_Statement coverage_) : "Chaque ligne de code dans le programme a-t-elle été exécutée et vérifiée?"
 - **Couverture des points de test** (_Condition coverage_) : "Chaque point d'évaluation (e.g. test d'une variable) a-t-il été exécuté et vérifié?"
-- **Couverture de branche** (_Branch coverage_ ou _DD-Path_) : "Chaque branche décisionnelle de chaque point d'évaluation a-t-il été exécuté et vérifié?"
+- **Couverture de branche** (_Branch coverage_ ou _DD-Path_) : "Chaque branche décisionnelle de chaque point d'évaluation a-t-elle été exécutée et vérifiée?"
 - **Couverture des chemins d'exécution** (_Path coverage_) : "Chaque parcours possible (i.e. chemin d'exécution) a-t-il été exécuté et vérifié?"
 
 Bien sûr, le test de couverture des chemins d'exécution est souvent impossible à réaliser, car pour chaque fonction, l'ensemble des variables doivent être testées. Pour un point d'évaluation booléen, il y aura donc 2^N chemins possibles, avec N le nombre de conditions à remplir. 
@@ -82,12 +83,25 @@ Prenons un exemple simpliste :
 
 Dans ce cas, le code génèrera une erreur pour toute valeur de _paramB_ inférieure à 0. Voyons comment les test peuvent aider à détecter ce cas de figure.
 
-La _couverture des fonctions_ nécessite un simple appel à la fonction, quel que soient les paramètres _paramA_ et _paramB_. Bien sûr, ce test est très limité et souvent jugé inutile, et ne détectera pas le défaut de notre exemple.
-Une _Couverture des instructions_ obligerait de réaliser un appel à _testFunc_ de façon à remplir la condition (e.g. avec _paramA_ valant -1), et à ne pas la remplir (e.g. avec _paramA_ valant 3). Là encore, notre défaut reste indétecté.
-La _Couverture des points de test_ impose de tester chaque condition (e.g. avec _paramA_ à 0 et paramB à 100, _paramA_ à 0 et paramB à 3, _paramA_ à 1 et paramB à 100, _paramA_ à 1 et paramB à 3). S moins de bien choisir les valeurs tester (et donc réaliser le test manuellement), le défaut ne sera toujours pas détecté.
-Enfin la _Couverture des chemins d'exécution_ impose de tester toutes les valeurs de _paramA_ et de _paramB_. Maintenant, notre défaut sera détecté, mais au prix du test de 255^255 cas.
+- La _couverture des fonctions_ nécessite un simple appel à la fonction, quel que soient les paramètres _paramA_ et _paramB_. Bien sûr, ce test est très limité et souvent jugé inutile, et ne détectera pas le défaut de notre exemple.
+- Une _Couverture des instructions_ obligerait de réaliser un appel à _testFunc_ de façon à remplir la condition (e.g. avec _paramA_ valant -1), et à ne pas la remplir (e.g. avec _paramA_ valant 3). Là encore, notre défaut reste indétecté.
+- La _Couverture des points de test_ impose de tester chaque condition (e.g. avec _paramA_ à 0 et paramB à 100, _paramA_ à 0 et paramB à 3, _paramA_ à 1 et paramB à 100, _paramA_ à 1 et paramB à 3). S moins de bien choisir les valeurs tester (et donc réaliser le test manuellement), le défaut ne sera toujours pas détecté.
+- Enfin la _Couverture des chemins d'exécution_ impose de tester toutes les valeurs de _paramA_ et de _paramB_. Maintenant, notre défaut sera détecté, mais au prix du test de 255^255 cas.
 
 Heureusement, il existe d'autres principes permettant de limiter le nombre de tests à réaliser sans trop réduire la portée des tests. Il est par exemple possible de tester tous les cas, en choisissant des valeurs aux limites (-127, 0, 1, 128 pour _paramA_ et _paramB_), ce qui dans notre cas détecterait le défaut sans avoir à réaliser des tests fastidieux. Je pourrais citer également l'[**Analyse des flux de données**](https://en.wikipedia.org/wiki/Data-flow_analysis) ou _Data-flow analysis_, ou encore de la [**Condition composée**](https://en.wikipedia.org/wiki/Modified_condition/decision_coverage) ou _MC/DC_, mais nous verrons tout cela dans un autre article.
+
+## Tests unitaires et de charge
+
+Je l'ai brièvement mentionné, des outils permettent d'effectuer une analyse statique du code et fournir des métriques permettant d'en évaluer d'une certaine manière la qualité. En plus de cela, il est possible de générer des tests dits [**tests unitaires**](https://fr.wikipedia.org/wiki/Test_unitaire).
+
+Les tests unitaires sont des tests de modules ou fonction, dont les paramètres sont sélectionnés et définis au préalable par le testeur. Ainsi, les fonctions testées peuvent l'être avec des paramètres aux limites, comme vu précédemment, ou suivant un scénario précis (découlant des spécifications, cas typiques d'usages, problèmes préalablement rencontrés, etc.).
+
+Concrètement, il est par exemple possible de définir des tests unitaire pour un module en utilisant les valeurs aux limites et des valeurs typiques fournies par l'utilisateur dans des cas d'utilisation normaux ou particuliers. Ainsi, contrairement à l'analyse statique, le test reflète l'utilisation réelle du produit[^3].
+
+[^3]: Comme outils de tests unitaires, on peut mentionner : [Unity test tools](https://unity3d.com/fr/learn/tutorials/topics/production/unity-test-tools), les [docstrings python](http://sametmax.com/les-docstrings/), etc.
+
+Les **tests de charge** quant à eux permettent de déterminer si un module supporte bien la charge. On effectue plusieurs requètes en un court laps de temps pour déterminer si le module tient la charge et quelle est sa réactivité.
+
 
 # Quelques exemples de normes logiciel
 
