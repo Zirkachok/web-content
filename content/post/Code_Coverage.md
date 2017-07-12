@@ -18,7 +18,7 @@ Commençons par une citation :
 
 _“During the development of any non-trivial program, software structure is almost always created that cannot be determined from top-level software specifications”_
 
-Qui dit logiciel, dit bug. Que ce soit une dérive par rapport aux spécifications, ou plus clairement un défaut du système, les bugs vont de paire avec le développement, et plus un projet gagne en taille et en complexité, plus leur probabilité et leur criticité augmente. C'est justement pour limiter ces problèmes (ou plutôt les détecter, car pour enchaîner sur une autre citation de Dijkstra, "Testing never proves the absence of faults, it only shows their presence") qu'ont été mises en place des systèmes de test et d'assurance qualité au niveau logiciel.
+Qui dit logiciel, dit bug. Que ce soit une dérive par rapport aux spécifications, ou plus clairement un défaut du système, les bugs vont de paire avec le développement, et plus un projet gagne en taille et en complexité, plus leur probabilité et leur criticité augmente. C'est justement pour limiter ces problèmes (ou plutôt les détecter, car pour enchaîner sur une autre citation de Dijkstra, _"Testing never proves the absence of faults, it only shows their presence"_) qu'ont été mises en place des systèmes de test et d'assurance qualité au niveau logiciel.
 
 L'assurance qualité dans le développement logiciel peut prendre plusieurs formes, allant des simples règles de codage, à l'analyse statique complète du code. Passons en revue les principales pratiques à connaître.
 
@@ -103,15 +103,16 @@ La norme définit cependant 3 **"classes de sécurité"** :
 
 Idéalement, chaque module devrait être décomposé en _unités logicielles_ (typiquement les fonctions d'entrée/sortie du module), avec chacun une classe de sécurité donnée.
 
-Documentation logiciel requise                         Class A   Class B   Class C
-Planning de développement                                 X         X         X
-Analyse des besoins logiciels                             X         X         X
-Définition de l'architecure logicielle                    X         X         X
-Design détaillé du logiciel                                         X         X
-Implémentation et vérification des unités logicielles     X         X         X
-Tests d'intégration logicielle                                      X         X
-Test du système logiciel                                            X         X
-Libération du logiciel                                    X         X         X
+| Documentation logiciel requise                        | Classe A | Classe B | Classe C |
+|-------------------------------------------------------|:--------:|:--------:|:--------:|
+| Planning de développement                             |     X    |     X    |     X    |
+| Analyse des besoins logiciels                         |     X    |     X    |     X    |
+| Définition de l'architecure logicielle                |     X    |     X    |     X    |
+| Design détaillé du logiciel                           |     -    |     X    |     X    |
+| Implémentation et vérification des unités logicielles |     X    |     X    |     X    |
+| Tests d'intégration logicielle                        |     -    |     X    |     X    |
+| Test du système logiciel                              |     -    |     X    |     X    |
+| Libération du logiciel                                |     X    |     X    |     X    |
 
 
 ## Ferroviaire : EN 50128
@@ -120,12 +121,14 @@ La norme [**EN 50128**](http://www.verifysoft.com/fr_EN_50128_Software_for_Railw
 
 La norme recommande également un niveau de couverture de code, en fonction du niveau _SIL_ :
 
-                                           SIL0   SIL1   SIL2   SIL3   SIL4
-Couverture des instructions                 R      HR     HR     HR     HR
-Couverture de branche                       -      R      R      HR     HR
-Condition composée                          -      R      R      HR     HR
-Analyse de flux de données                  -      R      R      HR     HR
-Couverture des chemins d'exécution          -      R      R      HR     HR
+
+|                                    | SIL 0 | SIL 1 | SIL 2 | SIL 3 | SIL 4 |
+|------------------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Couverture des instructions        |   R   |   HR  |   HR  |   HR  |   HR  |
+| Couverture de branche              |   -   |   R   |   R   |   HR  |   HR  |
+| Condition composée                 |   -   |   R   |   R   |   HR  |   HR  |
+| Analyse de flux de données         |   -   |   R   |   R   |   HR  |   HR  |
+| Couverture des chemins d'exécution |   -   |   R   |   R   |   HR  |   HR  |
 
 R = Recommandé ; HR = Hautement recommandé
 
@@ -134,6 +137,9 @@ R = Recommandé ; HR = Hautement recommandé
 
 De manière générale, les normes assignent aux modules et unités logiciels des niveaux de criticité (A, B et C dans le médical, SIL0 à SIL4 dans le ferroviaire, etc.). De plus, les risques doivent généraux doivent être listés et analysés, ce qui permettra d'assigner cette criticité à partir de données quantifiables.
 Pour cela, on se base souvent sur une [analyse des modes de défaillance](https://fr.wikipedia.org/wiki/Analyse_des_modes_de_d%C3%A9faillance,_de_leurs_effets_et_de_leur_criticit%C3%A9) (ou AMDEC) ou analyse des risques.
+
+Chaque risque se voit attribuer une **probabilité d'apparition** (avec 1 invraissemblable, 5 fréquent, et 10 permanent), une **gravité** (avec 1 non grave, 5 conséquences matérielles, et 10 danger de mort) et une **probabilité de non détection** (avec 1 infaillible, 5 système de détection en place mais faillible, et 10 aucune détection possible). La **criticité** du système équivaut alors au produit de ces trois valeurs. En générale, une criticité maximale et un rapport entre la criticité de l'AMDEC et la classe de sécurité ou SIL sont établis.
+
 
 
 # Pour aller plus loin...
