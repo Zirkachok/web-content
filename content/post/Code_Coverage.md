@@ -153,17 +153,17 @@ Pour cela, on se base souvent sur une [analyse des modes de défaillance](https:
 
 Chaque risque se voit attribuer :
 - une **probabilité d'apparition**, avec
- - 1 : invraissemblable
- - 5 : fréquent
- - 10 : permanent
+	 - 1 : invraissemblable
+	 - 5 : fréquent
+	 - 10 : permanent
 - une **gravité**, avec
- - 1 : non grave
- - 5 : conséquences matérielles
- - 10 : danger de mort
+	 - 1 : non grave
+	 - 5 : conséquences matérielles
+	 - 10 : danger de mort
 - une **probabilité de non détection**, avec
- - 1 : infaillible
- - 5 : système de détection en place mais faillible
- - 10 : aucune détection possible
+	 - 1 : infaillible
+	 - 5 : système de détection en place mais faillible
+	 - 10 : aucune détection possible
 
 La **criticité** du système équivaut alors au produit de ces trois valeurs. En générale, une criticité maximale et un rapport entre la criticité de l'AMDEC et la classe de sécurité ou SIL sont établis.
 
