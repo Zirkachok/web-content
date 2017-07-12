@@ -29,13 +29,13 @@ La manière dont l'**architecture logicielle** a été conçue impacte énormém
 
 Cette pratique permet de rendre le logiciel plus cempréhensible et facile à décrire (et donc à documenter), mais surtout elle permet de cloisonner les défauts, et lorsqu'il surviennent de limiter les corrections au module concerné ou ses appels. D'autres bonnes pratique (tels que les **Design patterns** par exemple) permettent de renforcer l'architecture, mais nous les aborderons dans un prochain article.
 
-Une fois que l'architecture est décomposée en modules, il est possible d'affecter à chaque module un niveau de criticité en fonction de son rôle proprement dit (voir plus bas pour les cas particuliers du [médical](#med62304) et du [ferroviaire](#fer50128)). Il s'agit d'une action particulèrement importante dans les secteurs normés, car cette évaluation y est obligatoire et impliquera des tests et validations plus ou moins approfondis et rigoureux. 
+Une fois que l'architecture est décomposée en modules, il est possible d'affecter à chaque module un niveau de criticité en fonction de son rôle proprement dit (voir plus bas pour les cas particuliers du [médical](Médical-:-EN-62304) et du [ferroviaire](Ferroviaire-:-EN-50128)). Il s'agit d'une action particulèrement importante dans les secteurs normés, car cette évaluation y est obligatoire et impliquera des tests et validations plus ou moins approfondis et rigoureux. 
 
 [^1]: Il existe de nombreuses études intéressantes sur le sujet, notamment sur le fait que l'organisation logicielle soit souvent le reflet de l'organisation des équipes de développement : c.f. [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway).
 
 ## Règles de codage et analyse statique
 
-Une fois l'architecture logicielle bien en place, reste le code lui-même. C'est là qu'entrent en jeu deux aspects : les _règles de codage_ et l'_analyse statique_. 
+Une fois l'architecture logicielle bien en place, reste le code lui-même. C'est là qu'entrent en jeu deux aspects : les _règles de codage_ et l'_analyse statique_.
 
 Un projet complexe est en règle générale développé par plusieurs ingénieurs en parallèle. Dans le monde de l'informatique, chaque développeur a une manière de coder qui lui est propre, et un logiciel rédigé à plusieurs mains peut vite devenir illisible si aucun cadre n'est défini. Ce cadre, ce sont les **règles de codage**. Elles définissent les pratiques imposées, comme par exemple le nommage des variables/classes/fonctions/méthodes, le [style d'indentation](https://fr.wikipedia.org/wiki/Style_d%27indentation), ou encore le découpage des fichiers sources, et permettent d'uniformiser le "style d'écriture" du code source, et ainsi le rendre plus lisible et maintenable.
 
@@ -92,7 +92,7 @@ Heureusement, il existe d'autres principes permettant de limiter le nombre de te
 # Quelques exemples de normes logiciel
 
 
-## Médical : EN 62304 {#med62304}
+## Médical : EN 62304
 
 La norme [**EN 62304**](http://www.verifysoft.com/fr_IEC_62304.html) définit les exigences du cycle de vie des logiciels. Comme le logiciel lui-même n'est pas évalué ni contraint directement (seulement par le biais du cycle de développement et de la documentation allant avec), il est simplement demandé que  le logiciel soit validé dans "les règles de l'art". 
 
@@ -116,7 +116,7 @@ Idéalement, chaque module devrait être décomposé en _unités logicielles_ (t
 | Libération du logiciel                                |     X    |     X    |     X    |
 
 
-## Ferroviaire : EN 50128 {#fer50128}
+## Ferroviaire : EN 50128
 
 La norme [**EN 50128**](http://www.verifysoft.com/fr_EN_50128_Software_for_Railway_Control_and_Protection_Systems.html) définit 5 niveaux d'intégrité de sécurité (ou [**Safety Integrity Level**](https://en.wikipedia.org/wiki/Safety_integrity_level) ou **SIL**, allant de SIL0 - le moins critique, à SIL4 - le plus critique).
 
