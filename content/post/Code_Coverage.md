@@ -9,7 +9,7 @@ banner     = "banners/placeholder.png"
 draft      = false
 +++
 
-Cela fait un moment que je voulais parler de qualité, sécurité, test et validation du logiciel, mais il s'agit d'un sujet tellement vaste et complexe que je me suis jusque là résigné à ne pas l'aborder. Jusque là, car les prochains articles seront sur ce thème, avec aujourd'hui une rapide introduction sur ce qu'est l'assurance qualité, en particulier dans les [**systèmes critiques**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_critique), qui sera suivie par une suite articles plus détaillés (et probablement moins "théoriques").
+Cela fait un moment que je voulais parler de qualité, sécurité, test et validation du logiciel, mais il s'agit d'un sujet tellement vaste et complexe que je me suis jusque là résigné à ne pas l'aborder. Jusque là, car les prochains articles seront sur ce thème, avec aujourd'hui une rapide introduction sur ce qu'est l'assurance qualité, en particulier dans les [**systèmes critiques**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_critique), qui sera suivie par une suite d'articles plus détaillés (et probablement moins "théoriques").
 
 
 # Qualité et sécurité logicielle
@@ -27,7 +27,7 @@ L'assurance qualité dans le développement logiciel peut prendre plusieurs form
 
 La manière dont l'**architecture logicielle** a été conçue impacte énormément la qualité du logiciel final, et dans ce domaine, la **modularité** est le maître mot[^1]. Idéalement, un logiciel complexe doit être décomposé en sous-parties cohérentes et relativement indépendantes, appelées **Modules** ou **_Components_**. Chaque module a ses propres **points d'entrée et de sortie** (les fonctions ou commandes accessibles de l'"extérieur"), dans l'idéal, limités au stric nécessaire.
 
-Cette pratique permet de rendre le logiciel plus cempréhensible et facile à décrire (et donc à documenter), mais surtout elle permet de cloisonner les défauts, et lorsqu'il surviennent de limiter les corrections au module concerné ou ses appels. D'autres bonnes pratique (tels que les **Design patterns** par exemple) permettent de renforcer l'architecture, mais nous les aborderons dans un prochain article.
+Cette pratique permet de rendre le logiciel plus compréhensible et facile à décrire (et donc à documenter), mais surtout elle permet de cloisonner les défauts, et lorsqu'il surviennent de limiter les corrections au module concerné ou ses appels. D'autres bonnes pratique (tels que les **Design patterns** par exemple) permettent de renforcer l'architecture, mais nous les aborderons dans un prochain article.
 
 Une fois que l'architecture est décomposée en modules, il est possible d'affecter à chaque module un [**niveau de criticité**](#assignation-des-niveaux-de-criticité) en fonction de son rôle proprement dit (voir plus bas pour les cas particuliers du [médical](#médical--en-62304) et du [ferroviaire](#ferroviaire--en-50128)). Il s'agit d'une action particulèrement importante dans les secteurs normés, car cette évaluation y est obligatoire et impliquera des tests et validations plus ou moins approfondis et rigoureux.
 
@@ -52,7 +52,7 @@ Le respect de ces règles de codage passe souvent par une vérification et relec
 
 Ces phases sont cependant loin d'être suffisantes, et une analyse automatique du code source est souvent indispensable : on parle alors d'**analyse statique**. L'analyse statique est effectuée par un logiciel[^2], qui déterminera notamment si les règles de codage et/ou MISRA sont respectés, si il existe du [code mort](https://en.wikipedia.org/wiki/Dead_code) (du code ne pouvant être atteint, quels que soient les chemins d'exécution), ou encore si certaines parties sont susceptibles de générer des bugs dans certaines conditions (typiquement, détecter les potentiels dépassements de tampon ou les accès mémoire).
 
-[^2]: Pour n'en citer que quelques uns : [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/) ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
+[^2]: Pour n'en citer que quelques uns : [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/), [Splint](http://www.splint.org/), [CPPCheck](http://cppcheck.sourceforge.net/), ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
 
 
 # Couverture de code
@@ -151,8 +151,21 @@ R = Recommandé ; HR = Hautement recommandé
 De manière générale, les normes assignent aux modules et unités logiciels des niveaux de criticité (A, B et C dans le médical, SIL0 à SIL4 dans le ferroviaire, etc.). De plus, les risques doivent généraux doivent être listés et analysés, ce qui permettra d'assigner cette criticité à partir de données quantifiables.
 Pour cela, on se base souvent sur une [analyse des modes de défaillance](https://fr.wikipedia.org/wiki/Analyse_des_modes_de_d%C3%A9faillance,_de_leurs_effets_et_de_leur_criticit%C3%A9) (ou AMDEC) ou analyse des risques.
 
-Chaque risque se voit attribuer une **probabilité d'apparition** (avec 1 invraissemblable, 5 fréquent, et 10 permanent), une **gravité** (avec 1 non grave, 5 conséquences matérielles, et 10 danger de mort) et une **probabilité de non détection** (avec 1 infaillible, 5 système de détection en place mais faillible, et 10 aucune détection possible). La **criticité** du système équivaut alors au produit de ces trois valeurs. En générale, une criticité maximale et un rapport entre la criticité de l'AMDEC et la classe de sécurité ou SIL sont établis.
+Chaque risque se voit attribuer :
+- une **probabilité d'apparition**, avec
+ - 1 : invraissemblable
+ - 5 : fréquent
+ - 10 : permanent
+- une **gravité**, avec
+ - 1 : non grave
+ - 5 : conséquences matérielles
+ - 10 : danger de mort
+- une **probabilité de non détection**, avec
+ - 1 : infaillible
+ - 5 : système de détection en place mais faillible
+ - 10 : aucune détection possible
 
+La **criticité** du système équivaut alors au produit de ces trois valeurs. En générale, une criticité maximale et un rapport entre la criticité de l'AMDEC et la classe de sécurité ou SIL sont établis.
 
 
 # Pour aller plus loin...
