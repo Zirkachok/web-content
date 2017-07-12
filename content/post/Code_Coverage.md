@@ -9,7 +9,7 @@ banner     = "banners/placeholder.png"
 draft      = false
 +++
 
-Cela fait un moment que je voulais parler de qualité, sécurité, test et validation du logiciel, mais il s'agit d'un sujet tellement vaste et complexe que je me suis jusque là résigné à ne pas l'aborder. Jusque là, car me voici bien décidé à compiler les quelques informations sur le sujet que j'ai pu grapiller à droite et à gauche, et fournir une rapide introduction sur ce qu'est l'assurance qualité, en particulier dans les [**Systèmes critiques**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_critique).
+Cela fait un moment que je voulais parler de qualité, sécurité, test et validation du logiciel, mais il s'agit d'un sujet tellement vaste et complexe que je me suis jusque là résigné à ne pas l'aborder. Jusque là, car les prochains articles seront sur ce thème, avec aujourd'hui une rapide introduction sur ce qu'est l'assurance qualité, en particulier dans les [**systèmes critiques**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_critique), qui sera suivie par une suite articles plus détaillés (et probablement moins "théoriques").
 
 
 # Qualité et sécurité logicielle
@@ -18,19 +18,20 @@ Commençons par une citation :
 
 _“During the development of any non-trivial program, software structure is almost always created that cannot be determined from top-level software specifications”_
 
-Qui dit logiciel, dit bug. Que ce soit une dérive par rapport aux spécifications, ou plus clairement un défaut du système, les bugs vont de paire avec le développement, et plus un projet gagne en taille et en complexité, plus leur probabilité et leur criticité augmente. C'est justement pour limiter ces problèmes (ou plutôt les détecter, car pour enchaîner sur une autre citation de Dijkstra, _"Testing never proves the absence of faults, it only shows their presence"_) qu'ont été mises en place des systèmes de test et d'assurance qualité au niveau logiciel.
+Qui dit logiciel, dit bug. Que ce soit une dérive par rapport aux spécifications, ou plus clairement un défaut du système, les bugs vont de paire avec le développement. Et plus un projet gagne en taille et en complexité, plus leur probabilité et leur criticité augmente. C'est justement pour limiter ces problèmes (ou plutôt les détecter, car pour enchaîner sur une autre citation de Dijkstra, _"Testing never proves the absence of faults, it only shows their presence"_) qu'ont été mises en place des systèmes de test et d'assurance qualité au niveau logiciel.
 
 L'assurance qualité dans le développement logiciel peut prendre plusieurs formes, allant des simples règles de codage, à l'analyse statique complète du code. Passons en revue les principales pratiques à connaître.
 
 
 ## Architecture modulaire et criticité
 
-La manière dont l'**architecture logicielle** a été conçue impacte énormément la qualité du logiciel final, et dans ce domaine, la **modularité** est le maître mot. Idéalement, un logiciel complexe doit être décomposé en sous-parties cohérentes et relativement indépendantes, appelées **Modules** ou **Components**. Chaque module a ses propres points d'entrée et de sortie (dans l'idéal, limités au stric nécessaire), en général les fonctions accessibles de l'extérieur ou les commandes sur un lien (lien radio, lien série, etc.).
+La manière dont l'**architecture logicielle** a été conçue impacte énormément la qualité du logiciel final, et dans ce domaine, la **modularité** est le maître mot[^1]. Idéalement, un logiciel complexe doit être décomposé en sous-parties cohérentes et relativement indépendantes, appelées **Modules** ou **_Components_**. Chaque module a ses propres **points d'entrée et de sortie** (les fonctions ou commandes accessibles de l'"extérieur"), dans l'idéal, limités au stric nécessaire.
 
 Cette pratique permet de rendre le logiciel plus cempréhensible et facile à décrire (et donc à documenter), mais surtout elle permet de cloisonner les défauts, et lorsqu'il surviennent de limiter les corrections au module concerné ou ses appels. D'autres bonnes pratique (tels que les **Design patterns** par exemple) permettent de renforcer l'architecture, mais nous les aborderons dans un prochain article.
 
-Une fois que l'architecture est décomposée en modules, il est possible d'affecter à chaque module un niveau de criticité en fonction de son rôle proprement dit (voir plus bas pour les cas particuliers du médical et du ferroviaire). Il s'agit d'une action particulèrement importante dans les secteurs normés, car cette évaluation y est obligatoire et impliquera des tests et validations plus ou moins approfondis et rigoureux. 
+Une fois que l'architecture est décomposée en modules, il est possible d'affecter à chaque module un niveau de criticité en fonction de son rôle proprement dit (voir plus bas pour les cas particuliers du [médical](#med62304) et du [ferroviaire](#fer50128)). Il s'agit d'une action particulèrement importante dans les secteurs normés, car cette évaluation y est obligatoire et impliquera des tests et validations plus ou moins approfondis et rigoureux. 
 
+[^1]: Il existe de nombreuses études intéressantes sur le sujet, notamment sur le fait que l'organisation logicielle soit souvent le reflet de l'organisation des équipes de développement : c.f. [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway).
 
 ## Règles de codage et analyse statique
 
@@ -48,9 +49,9 @@ Pour en citer quelques unes :
 
 Le respect de ces règles de codage passe souvent par une vérification et relecture du code (idéalement, par une personne indépendante au projet), et est complétée par une documentation rigoureuse et exhaustive des fonctions d'entrée/sortie des modules (au moins). Certains formalismes de commentaire permettent même à des outils comme [Doxygen](https://fr.wikipedia.org/wiki/Doxygen) de générer une documentation en ligne ou papier.
 
-Ces phases sont cependant loin d'être suffisantes, et une analyse automatique du code source est souvent indispensable : on parle alors d'**analyse statique**. L'analyse statique est effectuée par un logiciel[^1], qui déterminera notamment si les règles de codage et/ou MISRA sont respectés, si il existe du code mort (du code ne pouvant être atteint, quelles que soient les chemins d'exécution), ou encore si certaines parties sont susceptibles de générer des bugs dans certaines conditions (typiquement, détecter les dépassements de tampon ou les accès mémoire).
+Ces phases sont cependant loin d'être suffisantes, et une analyse automatique du code source est souvent indispensable : on parle alors d'**analyse statique**. L'analyse statique est effectuée par un logiciel[^2], qui déterminera notamment si les règles de codage et/ou MISRA sont respectés, si il existe du code mort (du code ne pouvant être atteint, quelles que soient les chemins d'exécution), ou encore si certaines parties sont susceptibles de générer des bugs dans certaines conditions (typiquement, détecter les dépassements de tampon ou les accès mémoire).
 
-[^1]: Pour n'en citer que quelques uns, [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/) ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
+[^2]: Pour n'en citer que quelques uns, [Parasoft](https://www.parasoft.com/), [Polarion](https://polarion.plm.automation.siemens.com/) ou encore [Polyspace](https://www.mathworks.com/products/polyspace.html)
 
 
 # Couverture de code
@@ -91,7 +92,7 @@ Heureusement, il existe d'autres principes permettant de limiter le nombre de te
 # Quelques exemples de normes logiciel
 
 
-## Médical : EN 62304
+## Médical : EN 62304 {#med62304}
 
 La norme [**EN 62304**](http://www.verifysoft.com/fr_IEC_62304.html) définit les exigences du cycle de vie des logiciels. Comme le logiciel lui-même n'est pas évalué ni contraint directement (seulement par le biais du cycle de développement et de la documentation allant avec), il est simplement demandé que  le logiciel soit validé dans "les règles de l'art". 
 
@@ -101,7 +102,7 @@ La norme définit cependant 3 **"classes de sécurité"** :
 - B : une blessure mineure est possible
 - C : la mort ou une blessure grave est possible
 
-Idéalement, chaque module devrait être décomposé en _unités logicielles_ (typiquement les fonctions d'entrée/sortie du module), avec chacun une classe de sécurité donnée.
+Idéalement, chaque module devrait être décomposé en _unités logicielles_ (typiquement les fonctions d'entrée/sortie du module), avec chacun une classe de sécurité donnée. Cependant, les différences d'exigeances entre ces classes est principalement documentaire (liés au process plutôt qu'au logiciel proprement dit). Nous aborderons plus en détail la norme _EN 62304_ dans un prochain article.
 
 | Documentation logiciel requise                        | Classe A | Classe B | Classe C |
 |-------------------------------------------------------|:--------:|:--------:|:--------:|
@@ -115,7 +116,7 @@ Idéalement, chaque module devrait être décomposé en _unités logicielles_ (t
 | Libération du logiciel                                |     X    |     X    |     X    |
 
 
-## Ferroviaire : EN 50128
+## Ferroviaire : EN 50128 {#fer50128}
 
 La norme [**EN 50128**](http://www.verifysoft.com/fr_EN_50128_Software_for_Railway_Control_and_Protection_Systems.html) définit 5 niveaux d'intégrité de sécurité (ou [**Safety Integrity Level**](https://en.wikipedia.org/wiki/Safety_integrity_level) ou **SIL**, allant de SIL0 - le moins critique, à SIL4 - le plus critique).
 
