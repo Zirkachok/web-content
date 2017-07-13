@@ -137,7 +137,7 @@ x   Configure user resource limits
 - Démarrer, arrêter et vérifier l'état des services réseau
 - Router le trafic IP statiquement
 - Router le trafic IP dynamiquement
-- Synchroniser l'horodatage du système via le réseau
+- Synchroniser l'horodatage du système via le réseau : [[ici]]({{< ref "lfcs-synchro-ntp.md" >}})
 
 Avancement : <span style="color:red">0%</span> / 15% (0/8)
 
@@ -161,6 +161,7 @@ Networking - 15%
 - Maintenir une zone DNS
 - Configurer un serveur FTP
 
+Avancement : <span style="color:red">0%</span> / 10% (0/17)
 
 <!--
 Service Configuration - 10%

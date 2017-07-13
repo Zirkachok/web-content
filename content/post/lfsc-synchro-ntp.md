@@ -21,15 +21,14 @@ Généralement, un système Linux repose sur deux horloge : l'une _matérielle_ 
 
 À l'amorçage de Linux (_boot_), la RTC est lue par le noyau et sert de référence à l'horloge système. Après cette première étape, le noyau synchronisera alors l'horloge système et la RTC avec celle fournie par un [**serveur NTP**](https://fr.wikipedia.org/wiki/Network_Time_Protocol). Sur certaines distributions, cette synchronisation est aussi effectuée à intervalles réguliers lors du fonctionnement du système.
 
-Il est aussi possible de paramétrer manuellement la RTC, généralement quand aucun serveur NTP n'est disponible. Pour cela, on utilise la commande **hwclock**. Seule, cette commande permet de lire la valeur de la RTC
 
 ## Synchroniser RTC et horloge système
 
-La commande [**hwclock**](https://linux.die.net/man/8/hwclock) peut être utilisée pour obtenir (sans option) ou affecter l'horodatage de la RTC. Avec l'option **--hctosys**, l'horloge système sera synchronisée avec la RTC, alors que l'option **--systohc** effectuera l'opération inverse. De plus, les options **--set --date=VAL** permettent d'affecter manuellement l'heure et la date VAL à la RTC. 
+Il est aussi possible de paramétrer manuellement la RTC, généralement quand aucun serveur NTP n'est disponible. Pour cela, on utilise la commande ["**hwclock**"](https://linux.die.net/man/8/hwclock). Seule, cette commande permet de lire la valeur de la RTC. Avec l'option "**--hctosys**", l'horloge système sera synchronisée avec la RTC, alors que l'option "**--systohc**" effectuera l'opération inverse. De plus, les options "**--set --date=VAL**" permettent d'affecter manuellement l'heure et la date VAL à la RTC.
 
-La RTC peut aussi plus ou moins dévier suivant les composants électroniques (quartz notamment) et la manière dont ils ont été routés sur la carte. C'est ce qu'on appelle la [**dérive d'horloge**](https://en.wikipedia.org/wiki/Clock_drift), ou _clock drift_. Dans ce cas, il peut être utile de compenser régulièrement cette dérive, en particulier dans les [systèmes embarqués](https://fr.wikipedia.org/wiki/Syst%C3%A8me_embarqu%C3%A9), en ajoutant ou retirant quelques secondes à la RTC. Cette opération se fait avec la commande **hwclock --adjust**.
+La RTC peut aussi plus ou moins dévier suivant les composants électroniques (quartz notamment) et la manière dont ils ont été routés sur la carte. C'est ce qu'on appelle la [**dérive d'horloge**](https://en.wikipedia.org/wiki/Clock_drift), ou _clock drift_. Dans ce cas, il peut être utile de compenser régulièrement cette dérive, en particulier dans les [systèmes embarqués](https://fr.wikipedia.org/wiki/Syst%C3%A8me_embarqu%C3%A9), en ajoutant ou retirant quelques secondes à la RTC. Cette opération se fait avec la commande "**hwclock --adjust**".
 
-Inversement, la commande [**date**](https://linux.die.net/man/1/date) permet d'afficher (sans option) ou affecter, via l'option **--set=VAL** l'horodatage de l'horloge système.
+Inversement, la commande ["**date**"](https://linux.die.net/man/1/date) permet d'afficher (sans option) ou affecter, via l'option "**--set=VAL**", l'horodatage de l'horloge système.
 
 
 ## Couches NTP
@@ -38,11 +37,36 @@ Le protocole NTP fonctionne via des serveurs, servant de référence de temps. C
 
 [^1]: Bien évidemment, plus une source est "bas" dans la hiérarchie, plus elle est précise, et donc plus elle est jugée fiable. Dans la pratique, il existe de nombreux serveurs de couche 1 disponibles pour se synchroniser.
 
+
+# Configurer un client NTP
+
+Pour syncroniser son système via NTP, il existe plusieurs clients, dont les principaux sont l'outil _chrony_ et le démon _ntpd_.
+
+## Chrony
+
+L'outil **chrony** est composé d'un démon, **chronyd**, et d'une commande de configuration, **chronyc**. 
+
 <!--
+systemctl enable chronyd
+systemctl start chronyd
+-->
 
- -->
+<!--
+The configuration for chrony is stored in the /etc/chrony.conf file. The chrony package includes both chronyd and chronyc. Chronyd is the daemon that is actively running and synchronizing with an NTP server, while chronyc is a command line tool used for making various adjustments.
+
+At the top of the configuration file the default NTP servers are specified, in my test server they appear as below. We can define a preferred NTP server by placing “prefer” at the end of one of the server configuration lines.
+
+If you have your own local NTP server you can modify the configuration to use this instead, be sure to reload the service afterwards to apply the changes. The NTP servers may also be retrieved by DHCP configuration, this can be disabled by specifying PEERDNS=no in the network configuration.
+-->
+
+**/etc/chrony.conf**, paramétrable via la commande **chronyc** (le démon s'appelle **chronyd**)
 
 
+
+## NTPD
+
+**/etc/ntp.conf**
+**ntpq**
 
 
 <!--

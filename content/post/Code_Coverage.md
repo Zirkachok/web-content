@@ -106,11 +106,11 @@ Les **tests de charge** quant à eux permettent de déterminer si un module supp
 
 ## Médical : EN 62304
 
-La norme [**EN 62304**](http://www.verifysoft.com/fr_IEC_62304.html) définit les exigences du cycle de vie des logiciels. Comme le logiciel lui-même n'est pas évalué ni contraint directement (seulement par le biais du cycle de développement et de la documentation allant avec), il est simplement demandé que  le logiciel soit validé dans "les règles de l'art". 
+La norme [**EN 62304**](http://www.verifysoft.com/fr_IEC_62304.html) définit les exigences du cycle de vie des logiciels. Le logiciel lui-même n'est pas évalué ni contraint directement (seulement par le biais du cycle de développement et de la documentation allant avec), il est simplement demandé que le logiciel soit validé dans "les règles de l'art".
 
 La norme définit cependant 3 **"classes de sécurité"** :
 
-- A : aucune blessure ou effet néfaste sur la santé n´est possible
+- A : aucune blessure ou effet néfaste sur la santé n'est possible
 - B : une blessure mineure est possible
 - C : la mort ou une blessure grave est possible
 
