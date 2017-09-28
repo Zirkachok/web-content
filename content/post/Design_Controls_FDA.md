@@ -36,7 +36,7 @@ Les _Design Controls_ permettent donc d'encadrer strictement la conception et le
 Passons maintenant en revue chaque étape pour en détailler le rôle et les exigences qu'elles impliquent. 
 
 
-# User Needs : Exprimer les besoins du produit et des utilisateurs
+# User Needs : Exprimer les besoins et les usages
 
 La phase _User Needs_ a principalement pour objectif de définir le futur dispositif médical selon [deux aspects](https://blog.greenlight.guru/intended-use-and-indications-of-use) :
 
@@ -52,7 +52,7 @@ Comme nous venons de le voir, la phase _User Needs_ a pour but de décrire votre
 
 A ce stade, les besoins doivent être exprimés dans un langage compréhensible de tous les acteurs (et doit donc éviter les termes trop techniques ou le jargon médical par exemple), et peuvent être raisonnablement imprécis (par exemple "Le dispositif doit être suffisemment petit pour être porté à la ceinture du patient" ou "Le dispositif doit être simple d'utilisation, même pour les personnes âgées").
 
-Documentez aussi le profil type de vos utilisateurs potentiels (les patients ET le personnel médical) et la manière dont ils utiliseront le produit. Ces informations serviront de base pour votre **Dossier d'aptitude à l'utilisation** ou **Usability brief**, qui évoluera tout au long de la conception et du développement de votre produit (et donc des phases du _Design Control_). Enfin, c'est encore à cette phase qu'il faut commencer à répertorier et [estimer la gravité des risques](https://soundcloud.com/medical-device-podcast/significant-risk-vs-nonsignificant-risk-devices-whats-the-difference), dans le document d'**Analyse de risques** ou **Risk assessment. Ces deux document (_Analyse de risques_ et _Aptitude à l'utilisation_) seront mis à jour tout au long du développement du produit (donc jusque la phase _Design Output_). Par exemple, en phase _Design Process_, il peut revenir à l'équipe de développement d'ajouter des risques techniques spécifiques.
+Documentez aussi le profil type de vos utilisateurs potentiels (les patients ET le personnel médical) et la manière dont ils utiliseront le produit. Ces informations serviront de base pour votre **Dossier d'aptitude à l'utilisation** ou **Usability brief**, qui évoluera tout au long de la conception et du développement de votre produit (et donc des phases du _Design Control_). Enfin, c'est encore à cette phase qu'il faut commencer à répertorier et [estimer la gravité des risques](https://soundcloud.com/medical-device-podcast/significant-risk-vs-nonsignificant-risk-devices-whats-the-difference), dans le document d'**Analyse de risques** ou **Risk assessment**. Ces deux document (_Analyse de risques_ et _Aptitude à l'utilisation_) seront mis à jour tout au long du développement du produit (donc jusque la phase _Design Output_). Par exemple, en phase _Design Process_, il peut revenir à l'équipe de développement d'ajouter des risques techniques spécifiques.
 
 
 ## Planning de conception et de développement
@@ -72,12 +72,12 @@ Un planning précis et réaliste n'est donc pas nécessaire, mais une descriptio
 
 # Design Input : Détailler les exigences liées au produit 
 
-_"La phase **Design Input** définit les exigences physiques et de performences pour un dispositif, qui servent de base pour la conception dudit dispositif."_ 21 CFR Part 820.30(f)
+_"La phase **Design Input** définit les exigences physiques et de performences pour un dispositif, qui servent de base pour la conception dudit dispositif."_ **21 CFR Part 820.30(f)**
 
 Comme nous venons de le voir, à ce stade les besoins du produit et des utilisateurs ont été définis et documentés. Cependant, ces besoins sont encore imprécis et peu techniques. Le rôle de la phase [_Design Input_](https://soundcloud.com/medical-device-podcast/medical-device-design-inputs-design-label) est donc de servir d'intermédiaire entre les documents de concept de la phase _User Needs_ (et notamment le _Profil Produit / Cahier des Charges_) et la partie technique, en transformant ces besoins en une liste d'exigences précises et sans abiguïté, formant ainsi les **Spécifications fonctionnelles**. Prenons les exemples suivants :
 
 
-| Besoin exprimé (phase _User Needs_)                                   | Exigence(s) correspondante(s)                                                                     |
+| Besoin exprimé (phase _User Needs_)                                   | Exigence(s) correspondante(s) (phase _Design Input)                                               |
 |-----------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------:|
 | Le produit doit être utilisable par le patient sous la douche         | Le dispositif doit être certifié IP 55                                                            |
 | Le dispositif doit être discrètement porté par le patient en continu  | Le dispositif doit être d'une dimention maximale de 10cm x 5cm x 3cm                              |
@@ -98,8 +98,7 @@ De manière générale, ces exigences sont héritées de l'_Analyse de risques_,
 
 # Design Output : La "recette" du futur produit
 
-_"La phase **Design Output** (ou Résultat de conception) définit le résultat d'un travail de conception [...]. Le résultat de conception se compose du produit à proprement parler, son emballage et étiquettage et du "Device Master Record""_
-21 CFR Part 820.30(g)
+_"La phase **Design Output** (ou Résultat de conception) définit le résultat d'un travail de conception [...]. Le résultat de conception se compose du produit à proprement parler, son emballage et étiquettage et du "Device Master Record""_ **21 CFR Part 820.30(g)**
 
 Le _Design Output_ est en quelque sorte la recette permettant de créer le produit. Elle peut se décomposer selon trois axes :
 
@@ -128,12 +127,11 @@ Industrialisation :
 - Les spécifications de l'emballage et étiquettage, ainsi que les méthodes et procédures utilisées
 - etc.
 
-Ainsi, le _Design Output_ décrit tous les aspects importants de la conception et du développement, et mets l'accent sur leur vérification et validation.
+Ainsi, le _Design Output_ décrit tous les aspects importants de la conception et du développement, et mets l'accent sur leur vérification et validation. C'est aussi à cette étape que le [**Device Master Record** ou **DMR**](https://en.wikipedia.org/wiki/Device_Master_Record) est constitué. Le DMR est un document [défini et exigé par la FDA](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=820.181) (21 CFR 820.181), qui liste et inclut ou fait référence aux documents de cette phase. C'est donc en quelque sorte le coeur de notre "recette".
 
-# Design Review
+# Design Review : Evaluer la faisabilité
 
-_"La Revue de Conception (Design review) désigne un examen documenté, complet, et systématique de la conception pour évaluer son adéquation avec les exigences/besoins, sa capacité à y répondre, ainsi qu'identifier les problèmes potentiels"_
-21 CFR Part 820.30(h)
+_"La Revue de Conception (Design review) désigne un examen documenté, complet, et systématique de la conception pour évaluer son adéquation avec les exigences/besoins, sa capacité à y répondre, ainsi qu'identifier les problèmes potentiels"_ **21 CFR Part 820.30(h)**
 
 Vous l'avez sûrement remarqué, le modèle en cascade suggéré par la FDA indique une revue à chaque étape. C'est en quelque sorte un jalon, qui permet d'évaluer le bon avancement du projet, la justesse des choix effectués, et la faisabilité de la conception et plus généralement du produit. Chaque revue est différente, une revue des _Design Inputs_ sera donc centrée sur la justesse des exigences, une autre en _Design Process_ portera plutôt sur le choix des composants. Mais dans tous les cas, deux formes restent et prédominent : l'une interne, centrée sur la capacité de la conception à être mise en oeuvre et en production, l'autre externe, centrée sur les exigences/besoins utilisateurs.
 
@@ -158,31 +156,37 @@ Conformité du produit aux exigences
 
 # Design Changes
 
+
 # Activités transverses
 
-## Bonnes pratiques générales
+Certaines activités doivent être implémentées tout au long de la conception du futur dispositif médical. Il s'agit notamment de l'historisation des documents, de la traçabilité des besoins et exigences, et du fil conducteur liant les documents entre eux.
 
-DHF & RTM
+Le premier document nécessaire est le **Design History File** ou **DHF**, qui liste l'ensemble des documents produits pour chaque phase, avec leur date de validation, une référence ou un lien audit document, etc. N'oubliez pas non plus son pendant de la phase _Design Output_, le **Device Master Record** ou **DMR**, et ceului de la phase d'industrialisation, le [**Device History Record** ou **DHR**](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=820.184).
+
+En plus de cela, il est fortement recommendé d'établir une matrice de traçabilité des exigences, **Requirements Traceability Matrix** ou **RTM**. Les inspecteurs de la FDA, lors de leur revue de la conception, voudront voir le chemin parcouru par un besoin, risque ou contrainte d'utilisation, depuis sa définition, expression comme exigence(s), test, vérification et finalement validation. Pour s'y retrouver facilement et ne manquer aucune étape, il est indispensable de mettre en place un mécanisme de traçabilité complet, testable (pour qu'aucune étape ne manque, et que tout besoin ait été suivi) et facilement manipulable.
 
 ## Aptitude à l'utilisation & Gestion des risques
 
-De toute évidence, lister les risques, les évaluer et trouver des moyens d'atténuation [n'est pas une tâche évidente](https://soundcloud.com/medical-device-podcast/significant-risk-vs-nonsignificant-risk-devices-whats-the-difference)
+En plus de cela, certains documents doivent évoluer au fil de l'avancement du projet, je parle en particulier de l'**Analyse de risques** et de l'**Aptitude à l'utilisation**. [Ces deux "étapes"](https://soundcloud.com/medical-device-podcast/intersection-of-medical-device-usability-and-risk-management) sont le plus souvent initiées dès le lancement du projet, et complétées à chaque phase. Par exemple, au lancement du projet, les risques les plus évidents sont répertoriés, puis plus tard des risques de plus en plus fins et/ou techniques. De même pour l'aptitude à l'utilisation, où le profil type de l'utilisateur et les conditions d'utilisation sont définis dès le lancement, puis suivis d'études cliniques, d'études de maniabilité d'un prototype nu, de l'interface graphique, etc. 
 
-https://soundcloud.com/medical-device-podcast/intersection-of-medical-device-usability-and-risk-management
+De toute évidence, lister les risques, les évaluer et trouver des moyens d'atténuation [n'est pas une tâche évidente](https://soundcloud.com/medical-device-podcast/significant-risk-vs-nonsignificant-risk-devices-whats-the-difference), et demande beaucoup de réflexion. En voici les principales étapes :
 
+- Répertorier le risque, ses causes et ses conséquences sur le patient.
+- Estimer la gravité du risque (par une [analyse des modes de défaillance](https://fr.wikipedia.org/wiki/Analyse_des_modes_de_d%C3%A9faillance,_de_leurs_effets_et_de_leur_criticit%C3%A9) par exemple).
+- Définir des moyens d'atténuation du risque, qui seront alors liés à des exigences.
+- Estimer la gravité du risque après la mise en place de moyens d'atténuation, et s'il est raisonnable ou non
+- Evaluer la gravité de la combinaison des risques listés
+
+L'ingéniérie à l'aptitude à l'utilisation est aussi une tâche complexe, [qui mériterait à elle seule une explication longue et complexe](http://www.thaymedical.com/blog/). Je l'aborderai donc dans un prochain article.
 
 # Pour aller plus loin
 
 Voici mes inspirations ayant mené à cet article. Vous y trouverez des ressources vous permettant d'aller plus loin sur le sujet.
 
+- [Une explication assez proche des recommandations de la FDA](https://blog.greenlight.guru/design-controls)
 - [Un _podcast_ très complet sur le SMQ, centré sur les exigences de la FDA](https://soundcloud.com/medical-device-podcast)
 
 
-TO READ !!! :
-
-https://soundcloud.com/medical-device-podcast
-	How to Properly Use the FDA Pre-Submission Process and Why It's So Important with Mike Drues
-	Comparing FDA Submission Types: 510(k) vs. De Novo vs. 513(g) vs. Pre-Submission
 
 <!--
 Maintaining a Design History File
